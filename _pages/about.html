@@ -87,11 +87,13 @@ permalink: /about/
   </div> <!-- End About Container -->
 </div> <!-- End Small Wrapper -->
 
+<style>
 
+</style>
 <el-dialog
 title=""
 :visible.sync="dialogVisible"
-width="30%"
+width="200"
 :before-close="handleClose">
 <img src="{{site.baseurl}}/assets/img/{% if site.author-qrcode %}{{site.author-qrcode}}{% endif %}" alt="{{site.author}}" width="200" height="200">
 
