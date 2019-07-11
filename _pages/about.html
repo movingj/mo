@@ -3,6 +3,16 @@ layout: home-page
 title: 关于我
 permalink: /about/
 ---
+
+<script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false }
+      }
+    })
+</script>
+
 <div class="small-wrapper">
   <div class="about-container">
     <section class="about-header">
@@ -15,6 +25,12 @@ permalink: /about/
       <p class="subtitle">{{site.about-author}}</p>
     </section>
     <section class="about-body">
+        <div id="app">
+            <el-button @click="visible = true">Button</el-button>
+            <el-dialog :visible.sync="visible" title="Hello world">
+              <p>Try Element</p>
+            </el-dialog>
+          </div>
       <ul class="contact-list">
         <li class="wechat"><a href="mailto:{{site.email}}"><i class="fa fa-wechat"></i></a></li>
       {% if site.email %}
@@ -74,3 +90,11 @@ permalink: /about/
     </section> <!-- End About Body-->
   </div> <!-- End About Container -->
 </div> <!-- End Small Wrapper -->
+<script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false }
+      }
+    })
+  </script>
