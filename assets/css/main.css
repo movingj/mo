@@ -1498,6 +1498,8 @@ pre code {
   overflow: hidden;
   margin: 0 auto 30px;
   display: inline-block;
+  margin: 0 0 0 6em;
+  
 }
 .about-header .subtitle {
   color: #311e3e;
