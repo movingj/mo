@@ -4,6 +4,23 @@ title: 关于我
 permalink: /about/
 ---
 
+<script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false,dialogVisible: false }
+      },
+      methods: {
+        handleClose(done) {
+          this.$confirm('确认关闭？')
+            .then(_ => {
+              done();
+            })
+            .catch(_ => {});
+        }
+      }
+    })
+</script>
 
 <div id="app">
 <div class="small-wrapper">
