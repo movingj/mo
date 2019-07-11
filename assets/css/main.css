@@ -1489,6 +1489,7 @@ pre code {
           border-radius: 100%;
   overflow: hidden;
   margin: 0 auto 30px;
+  display:flex;
 }
 
 .about-header .subtitle {
