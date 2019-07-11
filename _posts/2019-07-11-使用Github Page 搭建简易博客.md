@@ -6,7 +6,7 @@ date: 2019-07-11
 
 ---
 ## **1.注册属于你自己的Github账号**
-###[https://github.com/](https://github.com/)
+### [https://github.com/](https://github.com/)
  
  
 
@@ -26,7 +26,7 @@ date: 2019-07-11
 ![图片](https://app.yinxiang.com/shard/s61/res/dfdb3d9a-38e5-427d-9237-4eea1184c56b/2222222.png ''图片title'')
 
 ## **4.下载GitHub桌面版并安装**
-###[https://windows.github.com/](https://windows.github.com/)
+### [https://windows.github.com/](https://windows.github.com/)
 
 首先你需要登录桌面版，然后依次点击点击File - Clone Repository。
 
@@ -42,7 +42,7 @@ Clone之后就会在文稿中生成一个GitHub文件夹，文件夹的名字就
 在下面网站中选择一个你喜欢的主题，下载下来。
 
 
-###[http://jekyllthemes.org/](http://jekyllthemes.org/)
+### [http://jekyllthemes.org/](http://jekyllthemes.org/)
 
 打开刚刚生成的GitHub文件夹，把里面除.git（这个文件夹是个隐藏文件夹）的文件都删掉，然后把你下载好的主题Copy到GitHub文件夹中。
 
