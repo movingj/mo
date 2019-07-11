@@ -11,6 +11,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # Author settings
 author: Moving J # add your name
 author-pic: movingj.png
+author-qrcode: movingj_qrcode.png
 about-author: 我叫江世杰，来自中国广州，全栈工程师，热爱研究新技术，目前主要倾向前端技术，帮助企业建站，微信小程序开发。
 
 # Contact links
@@ -18,7 +19,7 @@ email: # Add your Email address
 phone: # Add your Phone number
 website: # Add your website, do not add http://
 linkedin: # Add your Linkedin handle
-github: artemsheludko # Add your Github handle
+github: movingj # Add your Github handle
 twitter: '@artemsheludko_' # Add your Twitter handle
 facebook: # Add your Facebook handle
 instagram: # Add your Instagram handle
