@@ -10,7 +10,7 @@ date: 2019-07-11
  
  
 
-##2.创建仓库
+## 2.创建仓库
 登录后点击右上方头像左侧的加号，在弹出框中选择“New repository”；
 
 创建仓库页面如下：
@@ -18,14 +18,14 @@ date: 2019-07-11
 ![图片](https://app.yinxiang.com/shard/s61/res/52e01130-3d32-4e77-8221-a4e5a22db9b9/6666666.jpeg ''图片title'')
 ![图片](https://app.yinxiang.com/shard/s61/res/c525d49c-687c-45bf-8fe4-19f6ebd40e41/1250458-20171017153553099-864426472.png ''图片title'')
 
-##3.开启Github Pages
+## 3.开启Github Pages
 
 点击仓库上方的Settings进入仓库设置。
 
 ![图片](https://app.yinxiang.com/shard/s61/res/7dea2b86-ab46-4720-ae26-8fb33c614d29/33333333.png ''图片title'')
 ![图片](https://app.yinxiang.com/shard/s61/res/dfdb3d9a-38e5-427d-9237-4eea1184c56b/2222222.png ''图片title'')
 
-##4.下载GitHub桌面版并安装
+## 4.下载GitHub桌面版并安装
 ###[https://windows.github.com/](https://windows.github.com/)
 
 首先你需要登录桌面版，然后依次点击点击File - Clone Repository。
