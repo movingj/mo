@@ -24,10 +24,8 @@ permalink: /about/
           
       <ul class="contact-list">
         <li class="wechat">
+          <a href="javascript:void()" @click="dialogVisible = true"><i class="fa fa-wechat"></i></a></li>
    
-            <el-tooltip class="item" effect="dark" content="微信" placement="top-start" >
-                <a href="javascript:void()" @click="dialogVisible = true"><i class="fa fa-wechat"></i></a></li>
-            </el-tooltip>
           
       {% if site.email %}
         <li class="email"><a href="mailto:{{site.email}}"><i class="fa fa-envelope-o"></i></a></li>
@@ -83,6 +81,20 @@ permalink: /about/
         <li class="pinterest"><a href="https://pinterest.com/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
       {% endif %} -->
       </ul>
+      <el-card class="box-card">
+          <div slot="header" class="clearfix">
+            <span>联系方式</span>
+            <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+          </div>
+          <div  class="text item">
+             微信：{{site.wechat}}
+          </div>
+          <div  class="text item">
+             邮箱： {{site.email}}
+          </div>
+      </el-card>
+
+
     </section> <!-- End About Body-->
   </div> <!-- End About Container -->
 </div> <!-- End Small Wrapper -->
