@@ -1,11 +1,12 @@
 ---
 layout: post
 title: 使用Github Page 搭建简易博客
+img: post-1.jpg # Add image post (optional)
 date: 2019-07-11
 
 ---
 
-##1.注册属于你自己的Github账号
+**##1.注册属于你自己的Github账号**
 ###[https://github.com/](https://github.com/)
  
  
