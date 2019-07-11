@@ -25,9 +25,8 @@ permalink: /about/
       <ul class="contact-list">
         <li class="wechat">
    
-            <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
-            <el-tooltip class="item" effect="dark" content="微信" placement="top-start">
-                <a href="mailto:{{site.email}}"><i class="fa fa-wechat"></i></a></li>
+            <el-tooltip class="item" effect="dark" content="微信" placement="top-start" >
+                <a href="javascript:void()" @click="dialogVisible = true"><i class="fa fa-wechat"></i></a></li>
             </el-tooltip>
           
       {% if site.email %}
@@ -90,15 +89,12 @@ permalink: /about/
 
 
 <el-dialog
-title="提示"
+title=""
 :visible.sync="dialogVisible"
 width="30%"
 :before-close="handleClose">
-<span>这是一段信息</span>
-<span slot="footer" class="dialog-footer">
-  <el-button @click="dialogVisible = false">取 消</el-button>
-  <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-</span>
+<img src="{{site.baseurl}}/assets/img/{% if site.author-qrcode %}{{site.author-qrcode}}{% endif %}" alt="{{site.author}}" width="200" height="200">
+
 </el-dialog>
 
 <script>
