@@ -13,4 +13,25 @@
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     {% endif %}
   </div>
+
+<!-- Gitment -->
+
+  <div id="container"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+  var gitment = new Gitment({
+
+    owner: 'movingj',              //比如我的叫anTtutu
+    repo: 'pershares.com',                 //比如我的叫anTtutu.github.io
+    oauth: {
+      client_id: 'b14fc95fc4e222a8e20d',          //比如我的828***********
+      client_secret: '639de17673f198d39d538ffffcc9903866d6eec6',  //比如我的49e************************
+    },
+  })
+  gitment.render('container')
+  </script>
+
+
+
 </section> <!-- End Comment Area -->
