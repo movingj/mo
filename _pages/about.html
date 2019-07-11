@@ -4,23 +4,7 @@ title: 关于我
 permalink: /about/
 ---
 
-<script>
-    new Vue({
-      el: '#app',
-      data: function() {
-        return { visible: false,dialogVisible: false }
-      },
-      methods: {
-        handleClose(done) {
-          this.$confirm('确认关闭？')
-            .then(_ => {
-              done();
-            })
-            .catch(_ => {});
-        }
-      }
-    })
-</script>
+
 
 <div id="app">
 <div class="small-wrapper">
@@ -116,5 +100,24 @@ width="30%"
   <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
 </span>
 </el-dialog>
+
+<script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false,dialogVisible: false }
+      },
+      methods: {
+        handleClose(done) {
+          this.$confirm('确认关闭？')
+            .then(_ => {
+              done();
+            })
+            .catch(_ => {});
+        }
+      }
+    })
+</script>
+
 </div>
 
