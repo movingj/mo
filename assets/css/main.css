@@ -1489,8 +1489,16 @@ pre code {
           border-radius: 100%;
   overflow: hidden;
   margin: 0 auto 30px;
+  display: inline-block;
 }
 
+.about-header .author-image-container2 {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  margin: 0 auto 30px;
+  display: inline-block;
+}
 .about-header .subtitle {
   color: #311e3e;
   font-weight: 300;
