@@ -1,4 +1,8 @@
-<header class="main-header">
+
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tag_words = site_tags | split:',' | sort %}
+
+<header id="header" class="main-header">
   <div class="wrapper">
     <div class="header-flex">
       <div class="menu-icon-container">
@@ -10,8 +14,36 @@
           <li><a href="{{site.baseurl}}/">首页</a></li>
           <!-- <li><a href="{{site.baseurl}}/message">留言板</a></li> -->
           <li><a href="{{site.baseurl}}/about">关于我</a></li>
+          <!-- <li><a href="{{site.baseurl}}/tags">所有分类</a></li> -->
+ 
+        
         </ul>
+            <el-menu
+            default-active="2"
+            class="el-menu-vertical-demo"
+            @select="handleSelect">
+            <el-submenu index="1">
+              <template slot="title">
+               
+                <span>所有分类</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+               
+              {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+                {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+                <el-menu-item index="{{site.baseurl}}/tags/#{{ this_word | cgi_escape }}" > {{this_word}}</el-menu-item>
+               
+              {% endunless %}{% endfor %}
+        
+              </el-menu-item-group>
+            </el-submenu>
+            </el-menu>
+    
+  
+ 
       </nav>
+
       <p class="logo"><a href="{{site.baseurl}}/">{{ site.author }}</a></p>
       <div class="search-icon-container">
         <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
@@ -19,3 +51,14 @@
     </div>
   </div>
 </header> <!-- End Header -->
+<script>
+    new Vue({
+      el: '#header',
+      methods:{
+        handleSelect(key, keyPath) {
+          console.log(keyPath);
+         location.href=keyPath[1];
+        }
+      }
+    })
+</script>

@@ -7,6 +7,7 @@ $(function () {
 
   // Menu Settings
   $('.menu-icon, .menu-icon-close').click(function (e) {
+     
     e.preventDefault()
     e.stopPropagation()
     flexContainer.toggleClass('active')
@@ -14,7 +15,11 @@ $(function () {
 
   // Click outside of menu to close it
   flexContainer.click(function (e) {
-    if (flexContainer.hasClass('active') && e.target.tagName !== 'A') {
+    console.log();
+    if( $(e.target).hasClass("el-submenu__title") || $(e.target).hasClass("el-submenu__icon-arrow") ){
+      return;
+    }
+    if (flexContainer.hasClass('active') && e.target.tagName !== 'A' ) {
       flexContainer.removeClass('active')
     }
   })
