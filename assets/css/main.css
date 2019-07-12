@@ -1608,8 +1608,8 @@ pre code {
 .page-content,
 .about-container,
 .post-card-box {
-  -webkit-animation-delay: 0.75s;
-          animation-delay: 0.75s;
+  /* -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s; */
 }
 
 @-webkit-keyframes fadeInDown {

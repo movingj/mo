@@ -3,9 +3,9 @@ layout: post
 title: 手把手教你黑群晖（二）
 img: post-1.jpg
 date: 2019-07-12
-tag: 技术
-
+tag: 测试
 categorys: 技术1
+
 ---
 
 > 接上一篇，（一）说了怎样在虚拟机安装黑群晖，这一篇就说怎样把它洗白。

@@ -1,17 +1,7 @@
 <!-- JS -->
 <script src="{{site.baseurl}}/assets/js/jquery-3.2.1.min.js"></script>
 <script src="{{site.baseurl}}/assets/js/jekyll-search.js"></script>
-<script>
-  SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '{{site.baseurl}}/search.json',
-    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-    noResultsText: 'No results found',
-    fuzzy: false,
-    exclude: ['Welcome']
-  });
-</script>
+
 <script src="{{site.baseurl}}/assets/js/main.js"></script>
 
 <!-- Element UI -->
@@ -19,15 +9,48 @@
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script>
 $(function(){
+
+  new Vue({
+      el: '#app',
+      data() {
+        return { 
+          visible: false,
+          dialogVisible: false,
+          activeName:'0'
+        
+        
+         }
+      },
+
+  })
+
+
+
+
+
+
   $("#SOHUCS").bind("DOMNodeInserted",function(e){
+    console.log('afasdsa');
     $("#pop_ad").remove();
     $(".wrap-user-gw").remove();
     $("#feedAv").remove();
   })
 
+
 })
 
 </script>
+<script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '{{site.baseurl}}/search.json',
+      searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+      noResultsText: 'No results found',
+      fuzzy: false,
+      exclude: ['Welcome']
+    });
+  </script>
 
 
 

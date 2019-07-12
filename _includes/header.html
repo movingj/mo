@@ -51,14 +51,17 @@
     </div>
   </div>
 </header> <!-- End Header -->
+
 <script>
-    new Vue({
+  new Vue({
       el: '#header',
       methods:{
         handleSelect(key, keyPath) {
-          console.log(keyPath);
+         
          location.href=keyPath[1];
         }
       }
-    })
+  })
+
 </script>
+
