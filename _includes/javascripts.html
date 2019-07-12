@@ -18,9 +18,16 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script>
-  $(function(){
+$(function(){
+  $("#SOHUCS").bind("DOMNodeInserted",function(e){
     $("#pop_ad").hide();
   })
+  // $(".cont-msg-gw").bind("DOMNodeInserted",function(e){
+  //   alert('c');
+  //   $(".wrap-picture-show-gw").remove();
+  // })
+  console.log (  $(".wrap-picture-show-gw") ); 
+})
 </script>
 
 
