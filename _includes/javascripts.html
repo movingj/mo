@@ -20,14 +20,13 @@
 <script>
 $(function(){
   $("#SOHUCS").bind("DOMNodeInserted",function(e){
-    $("#pop_ad").hide();
+    $("#pop_ad").remove();
+    $(".wrap-user-gw").remove();
+    $("#feedAv").remove();
   })
-  // $(".cont-msg-gw").bind("DOMNodeInserted",function(e){
-  //   alert('c');
-  //   $(".wrap-picture-show-gw").remove();
-  // })
-  console.log (  $(".wrap-picture-show-gw") ); 
+
 })
+
 </script>
 
 
