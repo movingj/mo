@@ -7,7 +7,7 @@ date: 2019-07-11
 ---
 ## **1.注册属于你自己的Github账号**
 ### [https://github.com/](https://github.com/)
- 
+
  
 
 ## **2.创建仓库**
@@ -51,5 +51,37 @@ Clone之后就会在文稿中生成一个GitHub文件夹，文件夹的名字就
 然后按下面步骤操作。
 
 ![图片](https://app.yinxiang.com/shard/s61/res/6334e96d-62c9-4bc8-a2e3-a34ec297a383.jpg ''图片title'')
+
+## **7.搭建运行本地环境**
+- 安装Ruby 
+  https://rubyinstaller.org/downloads/
+
+- 安装 Bundler 
+
+  > gem install bundler
+
+- 安装 Jekyll
+
+    在 GitHub Pages 目录新建文件`Gemfile`，内容如下：
+
+  > ```
+  >   source 'https://rubygems.org'
+  >      gem 'github-pages', group: :jekyll_plugins
+  > ```
+
+    执行
+
+  > ```
+  > bundler install
+  > ```
+
+- 运行 Jekyll
+
+  > ```
+  > bundle exec jekyll serve
+  > ```
+
+
+
 
 
