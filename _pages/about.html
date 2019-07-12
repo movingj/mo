@@ -92,7 +92,9 @@ permalink: /about/
           <div  class="text item">
              邮箱： {{site.email}}
           </div>
-      </el-card>
+    </el-card>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
     <!--PC版-->
     <div id="SOHUCS" ></div>
     <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
@@ -114,6 +116,7 @@ permalink: /about/
 title=""
 :visible.sync="dialogVisible"
 width="200px"
+top="30vh"
 >
 <img src="{{site.baseurl}}/assets/img/{% if site.author-qrcode %}{{site.author-qrcode}}{% endif %}" alt="{{site.author}}" width="200" height="200">
 
