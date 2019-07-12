@@ -3,6 +3,7 @@ layout: post
 title: 使用Github Page 搭建简易博客
 img: post-1.jpg
 date: 2019-07-11
+tag: 技术
 
 ---
 ## **1.注册属于你自己的Github账号**
@@ -82,6 +83,8 @@ Clone之后就会在文稿中生成一个GitHub文件夹，文件夹的名字就
   > ```
 
 
+
+Server address: http://127.0.0.1:4000/
 
 
 
