@@ -1,6 +1,6 @@
 
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign tag_words = site_tags | split:',' | sort %}
+
 
 <header id="header" class="main-header">
   <div class="wrapper">
@@ -31,7 +31,7 @@
                 <!-- <template slot="title">分组一</template> -->
                
               {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-                {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+                {% capture this_word %}{{ site_tags[item] | strip_newlines }}{% endcapture %}
                 <el-menu-item index="{{site.baseurl}}/tags/#{{ this_word | cgi_escape }}" > {{this_word}}</el-menu-item>
                
               {% endunless %}{% endfor %}
