@@ -27,11 +27,7 @@
               <el-menu-item-group>
                 <!-- <template slot="title">分组一</template> -->
                
-              {% for category in site.categories %}
-               
-                <el-menu-item index="{{site.baseurl}}/tags/#{{ this_word | cgi_escape }}" > {{category}}</el-menu-item>
-               
-              {% endfor %}
+         
         
               </el-menu-item-group>
             </el-submenu>
