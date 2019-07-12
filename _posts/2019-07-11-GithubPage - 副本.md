@@ -4,7 +4,7 @@ title: 使用Github Page 搭建简易博客
 img: post-1.jpg
 date: 2019-07-11
 tag: 技术
-categorys: 技术1
+category: 技术1
 ---
 ## **1.注册属于你自己的Github账号**
 ### [https://github.com/](https://github.com/)
