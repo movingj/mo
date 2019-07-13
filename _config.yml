@@ -34,8 +34,8 @@ mailchimp: # Add your MailChimp form identifier.
 discus_identifier: mr-brown # Add your discus identifier
 
 # Paginate
-paginate: 1
-paginate_path: /page:num/
+paginate: 6
+paginate_path: /test/page:num/
 
 # Build settings
 markdown: kramdown
