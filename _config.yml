@@ -34,8 +34,9 @@ mailchimp: # Add your MailChimp form identifier.
 discus_identifier: mr-brown # Add your discus identifier
 
 # Paginate
+gems: [jekyll-paginate]
 paginate: 6
-paginate_path: /test/page:num/
+paginate_path: ['/page:num','/test/paget:num/']
 
 # Build settings
 markdown: kramdown
