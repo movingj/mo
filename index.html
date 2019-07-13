@@ -5,7 +5,7 @@ layout: home-page
 {% capture site_categories %}{% for tag in site.categories %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign category_words = site_categories | split:',' | sort %}
 <div id="app">
-<el-tabs v-model="activeName" @tab-click="handleClick" stretch="true">
+<el-tabs v-model="activeName" stretch="true">
 
   {% for item in (0..site.categories.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ category_words[item] | strip_newlines }}{% endcapture %}
