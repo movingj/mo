@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>手把手教你黑群晖（一） - 江世杰的个人博客 - MovingJ</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#311e3e">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#311e3e">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+	<!-- Google Fonts -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet"> -->
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!-- element ui -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<style>
+	.el-menu{
+		border-right:0;
+	}
+
+	</style>
+</head>
+
+<body>
+  
+  <!-- JS -->
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/jekyll-search.js"></script>
+
+<script src="/assets/js/main.js"></script>
+
+<!-- Element UI -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+$(function(){
+
+  new Vue({
+      el: '#app',
+      data() {
+        return { 
+          visible: false,
+          dialogVisible: false,
+          activeName:'0'
+        
+        
+         }
+      },
+
+  })
+
+
+
+
+
+
+  $("#SOHUCS").bind("DOMNodeInserted",function(e){
+    console.log('afasdsa');
+    $("#pop_ad").remove();
+    $(".wrap-user-gw").remove();
+    $("#feedAv").remove();
+  })
+
+
+})
+
+</script>
+<script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '/search.json',
+      searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+      noResultsText: 'No results found',
+      fuzzy: false,
+      exclude: ['Welcome']
+    });
+  </script>
+
+
+
+
+
+  <div class="flex-container">
+  
+<header id="header" class="main-header">
+  <div class="wrapper">
+    <div class="header-flex">
+      <div class="menu-icon-container">
+        <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </div>
+      <nav class="main-nav">
+        <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <ul>
+          <li><a href="/">首页</a></li>
+          <!-- <li><a href="/message">留言板</a></li> -->
+          <li><a href="/about">关于我</a></li>
+          <li><a href="#">文章</a></li>
+ 
+        
+        </ul>
+            <el-menu
+            default-active="2"
+            class="el-menu-vertical-demo"
+            @select="handleSelect">
+            <el-submenu index="1">
+              <template slot="title">
+               
+                <span>所有分类</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+                
+               
+                <el-menu-item index="/tag/%E6%8A%80%E6%9C%AF" > %E6%8A%80%E6%9C%AF</el-menu-item>
+               
+                
+               
+                <el-menu-item index="/tag/%E6%B5%8B%E8%AF%95" > %E6%B5%8B%E8%AF%95</el-menu-item>
+               
+                
+         
+        
+              </el-menu-item-group>
+            </el-submenu>
+            </el-menu>
+    
+  
+ 
+      </nav>
+
+      <p class="logo"><a href="/">Moving J</a></p>
+      <div class="search-icon-container">
+        <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
+      </div>
+    </div>
+  </div>
+</header> <!-- End Header -->
+
+<script>
+  new Vue({
+      el: '#header',
+      methods:{
+        handleSelect(key, keyPath) {
+         
+         location.href=keyPath[1];
+        }
+      }
+  })
+
+</script>
+
+
+  <article class="article-page">
+    <div class="page-image">
+      <div class="cover-image" style="background: url(/assets/img/post-1.jpg) center no-repeat; background-size: cover;"></div>
+    </div>
+    <div class="wrapper">
+      <div class="page-content">
+        <div class="header-page">
+          <h1 class="page-title">手把手教你黑群晖（一）</h1>
+          <div class="page-date"><time datetime="2019-07-12 00:00:00 +0800">2019, Jul 12</time></div>
+        </div>
+        <p>本人是在虚拟机环境下安装的，所以准备工具用到VMware Fusion。</p>
+
+<p>准备工具：</p>
+
+<ul>
+  <li>VMware Fusion</li>
+  <li>XPEnoboot_DS3615xs_5.2-5592.1.iso</li>
+  <li>DSM_DS3615xs_5592.pat</li>
+  <li>Synology Assistant</li>
+</ul>
+
+<blockquote>
+  <p>第一步：创建虚拟机</p>
+</blockquote>
+
+<p>选择Linux2.6.x 64位</p>
+
+<p><img src="http://p9.pstatp.com/large/11f70004a40f80776c4f" alt="手把手教你黑群晖（一）" /></p>
+
+<p><img src="http://p1.pstatp.com/large/11fd00027d9215239d45" alt="手把手教你黑群晖（一）" /></p>
+
+<blockquote>
+  <p>第二步：选择ISO文件,并设置网卡为桥接模式</p>
+</blockquote>
+
+<p><img src="http://p1.pstatp.com/large/11fb0004a7d9466e5ef2" alt="手把手教你黑群晖（一）" /></p>
+
+<p><img src="http://p9.pstatp.com/large/11980002845d0276e4e7" alt="手把手教你黑群晖（一）" /></p>
+
+<blockquote>
+  <p>第三步：选择启动磁盘为CD/DVD<strong>（很重要，不然安装完重启会发现启动不鸟）</strong></p>
+</blockquote>
+
+<p><img src="http://p3.pstatp.com/large/11f90004b0155c324bdb" alt="手把手教你黑群晖（一）" /></p>
+
+<p><img src="http://p9.pstatp.com/large/11fb0004b2363cbccb74" alt="手把手教你黑群晖（一）" /></p>
+
+<blockquote>
+  <p>第四步：运行虚拟机，选择Install/Upgrade,回车</p>
+</blockquote>
+
+<p><img src="http://p1.pstatp.com/large/11f90004a744e589c8f1" alt="手把手教你黑群晖（一）" /></p>
+
+<p><img src="http://p9.pstatp.com/large/11f70004ab2eb8b6691a" alt="手把手教你黑群晖（一）" /></p>
+
+<p>当屏幕显示DiskStation Login，这个时候打开Synology Assistant,点击搜索，会出现你的虚拟机，显示状态为未安装</p>
+
+<p><img src="http://p3.pstatp.com/large/11fc0004aa4326a024c5" alt="手把手教你黑群晖（一）" /></p>
+
+<p>右键选择安装</p>
+
+<p><img src="http://p3.pstatp.com/large/11fc0004aa42331afcd9" alt="手把手教你黑群晖（一）" /></p>
+
+<p>进入设置向导，选择安装文件（DSM_DS3615xs_5592.pat），然后按提示一直下一步，进入安装进度界面，大概等待10几分钟安装完成。</p>
+
+<p><img src="http://p3.pstatp.com/large/11f70004b0a64d0ffa84" alt="手把手教你黑群晖（一）" /></p>
+
+<p>打开Synology Assistant，这时状态会变为已就绪，双击就会自动打开网页进入登陆界面，输入你刚刚设置的账号密码尽情享受吧！！！</p>
+
+<p><img src="http://p1.pstatp.com/large/11fb0004b4a17603340a" alt="手把手教你黑群晖（一）" /></p>
+
+<p><img src="http://p3.pstatp.com/large/11f70004b2a9e2e2c7cc" alt="手把手教你黑群晖（一）" /></p>
+
+<blockquote>
+  <p><strong>下一篇会教你们怎样把把你的群晖洗白！</strong></p>
+</blockquote>
+
+        <div class="page-footer">
+          <div class="page-tag">
+            <span>Tags:</span>
+            
+            <a href="/tags#技术" class="tag">| 技术</a>
+            
+          </div><!-- End Tags -->
+          <div class="page-share">
+            <span>Share:</span>
+            <!-- <a href="https://twitter.com/intent/tweet?text=手把手教你黑群晖（一）&url=http://localhost:4000/SynologyAssistant01/" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/sharer.php?u=http://localhost:4000/SynologyAssistant01/" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://plus.google.com/share?url=http://localhost:4000/SynologyAssistant01/" title="Share on Google+" rel="nofollow" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a> -->
+          </div><!-- End Share -->
+        </div>
+        <section class="author-box">
+  <img src="/assets/img/movingj.png" alt="Moving J" class="author-img">
+  <div class="author-desc">
+    <h2>Moving J</h2>
+    <p>我叫江世杰，来自中国广州，全栈工程师，热爱研究新技术，目前主要倾向前端技术，帮助企业建站，微信小程序开发。</p>
+    <ul>
+      
+        <li class="email"><a href="mailto:moving_j@aliyun.com"><i class="fa fa-envelope-o"></i></a></li>
+      
+      <!-- 
+        <li class="phone"><a href="tel:044 825 5523"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+       -->
+      <!-- 
+        <li class="website"><a href="https://artemsheludko.github.io" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+       -->
+
+    </ul>
+  </div>
+</section>
+
+        <div class="recent-box">
+  <h2 class="recent-title">最近发表</h2>
+  <div class="recent-list">
+    
+      
+        <a href="/life01/" class="recent-item" style="background: url(/assets/img/post-1.jpg) center no-repeat; background-size: cover;"><span>生活中的思考</span></a>
+      
+    
+      
+        <a href="/SynologyAssistant02/" class="recent-item" style="background: url(/assets/img/post-1.jpg) center no-repeat; background-size: cover;"><span>手把手教你黑群晖（二）</span></a>
+      
+    
+      
+        <a href="/SynologyAssistant01/" class="recent-item" style="background: url(/assets/img/post-1.jpg) center no-repeat; background-size: cover;"><span>手把手教你黑群晖（一）</span></a>
+      
+    
+      
+        <a href="/GithubPage/" class="recent-item" style="background: url(/assets/img/post-1.jpg) center no-repeat; background-size: cover;"><span>使用Github Page 搭建简易博客</span></a>
+      
+    
+  </div>
+</div> <!-- End Recent-Box -->
+
+      
+        <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//mr-brown.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+
+
+
+
+
+</section> <!-- End Comment Area -->
+
+      </div>
+    </div> <!-- End Wrapper -->
+  </article>
+  <div class="search-box">
+  <div class="wrapper">
+    <div class="search-grid">
+      <form class="search-form">
+        <div id="search-container">
+          <input type="text" id="search-input" class="search" placeholder="Search">
+        </div>
+      </form>
+      <ul id="results-container" class="results-search"></ul>
+      <div class="icon-close-container">
+        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<footer class="main-footer">
+  <div class="copyright">
+    <p>2019 &copy; Moving J</p>
+    <!-- <span id="busuanzi_value_site_pv"></span>次 -->
+  </div>
+
+</footer> <!-- End Footer -->
+
+</div>
+
+  
+
+</body>
+</html>

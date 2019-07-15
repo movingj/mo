@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Your Title - 测试</title>
+ <link href="/tag/%E6%B5%8B%E8%AF%95.xml" rel="self"/>
+ <link href="/tag/测试.html"/>
+ <updated>2019-07-15T16:16:47+08:00</updated>
+ <id>/tag/测试.html</id>
+ <author>
+   <name>Author Here</name>
+ </author>
+ 
+ <entry>
+   <title>生活中的思考</title>
+   <link href="//life01/"/>
+   <updated>2019-07-13T00:00:00+08:00</updated>
+   <id>/life01</id>
+   <content type="html">&lt;p&gt;嗯&lt;/p&gt;
+</content>
+ </entry>
+ 
+</feed>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>江世杰的个人博客 - MovingJ</title>
+	<title>关于我 - 江世杰的个人博客 - MovingJ</title>
 	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -166,105 +166,113 @@ $(function(){
 
 
   <div class="content wrapper">
-    
+    <div id="app">
+<div class="small-wrapper">
+  <div class="about-container">
+    <section class="about-header">
+      <div class="author-image-container">
+        <img src="/assets/img/movingj.png" alt="Moving J">
+      </div>
+      <div class="author-image-container2">
+        <img src="/assets/img/movingj-qrcode.png" alt="Moving J">
+      </div>
+      <p class="subtitle">我叫江世杰，来自中国广州，全栈工程师，热爱研究新技术，目前主要倾向前端技术，帮助企业建站，微信小程序开发。</p>
+    </section>
+    <section class="about-body">
+       
+      
+          
+      <ul class="contact-list">
+        <li class="wechat">
+          <a href="javascript:void()" @click="dialogVisible = true"><i class="fa fa-wechat"></i></a></li>
+   
+          
+      
+        <li class="email"><a href="mailto:moving_j@aliyun.com"><i class="fa fa-envelope-o"></i></a></li>
+      
 
-<div id="app">
-<el-tabs v-model="activeName" stretch="true">
+      <li class="weibo">
+          <a href="https://weibo.com/m0ving"><i class="fa fa-weibo"></i></a></li>
+      <!-- 
+        <li class="phone"><a href="tel:044 825 5523"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+       -->
 
-  
-    
-  
-    <el-tab-pane label="技术" name="0"> 
-        <ol class="post-card-box clearfix">
-        
+      <!-- 
+        <li class="website"><a href="https://artemsheludko.github.io" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+       -->
+
+      
+        <li class="linkedin"><a href="https://in.linkedin.com/in/movingj" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      
+
+      
+        <li class="github"><a href="http://github.com/movingj" target="_blank"><i class="fa fa-github"></i></a></li>
+      
+
+      <!-- 
+        <li class="twitter"><a href="https://twitter.com/@artemsheludko_" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      
+
+      
+        <li class="facebook"><a href="https://facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      
+
+      
+        <li class="instagram"><a href="https://instagram.com/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+      
+
+      
+        <li class="pinterest"><a href="https://pinterest.com/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+       -->
+      </ul>
+      <el-card class="box-card">
+          <div slot="header" class="clearfix">
+            <span>联系方式</span>
           
-        
-          
-        <li>
-            <div class="post-card">
-              <a href="/SynologyAssistant02/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
-              </a>
-        
-              <div class="post-card-body">
-                  
-                  <a href="/tags#技术" class="tag">|&#32;技术</a>
-                  
-                  <a href="/SynologyAssistant02/" class="post-card-link"><h3 class="post-card-title">手把手教你黑群晖（二）</h3></a>
-              </div>
-            </div>
-        </li>
-          
-        
-          
-        <li>
-            <div class="post-card">
-              <a href="/SynologyAssistant01/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
-              </a>
-        
-              <div class="post-card-body">
-                  
-                  <a href="/tags#技术" class="tag">|&#32;技术</a>
-                  
-                  <a href="/SynologyAssistant01/" class="post-card-link"><h3 class="post-card-title">手把手教你黑群晖（一）</h3></a>
-              </div>
-            </div>
-        </li>
-          
-        
-          
-        <li>
-            <div class="post-card">
-              <a href="/GithubPage/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
-              </a>
-        
-              <div class="post-card-body">
-                  
-                  <a href="/tags#技术" class="tag">|&#32;技术</a>
-                  
-                  <a href="/GithubPage/" class="post-card-link"><h3 class="post-card-title">使用Github Page 搭建简易博客</h3></a>
-              </div>
-            </div>
-        </li>
-          
-        
-        </ol>
-    </el-tab-pane>
-    
-  
-    
-  
-    <el-tab-pane label="生活" name="1"> 
-        <ol class="post-card-box clearfix">
-        
-          
-        <li>
-            <div class="post-card">
-              <a href="/life01/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
-              </a>
-        
-              <div class="post-card-body">
-                  
-                  <a href="/tags#测试" class="tag">|&#32;测试</a>
-                  
-                  <a href="/life01/" class="post-card-link"><h3 class="post-card-title">生活中的思考</h3></a>
-              </div>
-            </div>
-        </li>
-          
-        
-          
-        
-          
-        
-          
-        
-        </ol>
-    </el-tab-pane>
-    
-  
-</el-tabs>
+          </div>
+          <div  class="text item">
+             微信： mov1ng
+          </div>
+          <div  class="text item">
+             邮箱： moving_j@aliyun.com
+          </div>
+    </el-card>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+    <!--PC版-->
+    <div id="SOHUCS" ></div>
+
+    </section> <!-- End About Body-->
+  </div> <!-- End About Container -->
+</div> <!-- End Small Wrapper -->
+
+<el-dialog
+title=""
+:visible.sync="dialogVisible"
+width="200px"
+top="30vh"
+>
+<img src="/assets/img/movingj-qrcode.png" alt="Moving J" width="200" height="200">
+
+</el-dialog>
+
+
+
 </div>
+    <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>
+    <script type="text/javascript">
+    window.changyan.api.config({
+    appid: 'cyukskYrE',
+    conf: 'prod_759b01b86a015532ae9c04617150daee'
+    });
+    </script>
 
+<script>
+   
+
+
+
+</script>
 
 
   <div class="search-box">

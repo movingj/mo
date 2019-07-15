@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>江世杰的个人博客 - MovingJ</title>
+	<title>Tags - 江世杰的个人博客 - MovingJ</title>
 	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -168,104 +168,52 @@ $(function(){
   <div class="content wrapper">
     
 
-<div id="app">
-<el-tabs v-model="activeName" stretch="true">
 
+<section class="blog-tags">
+  <h1>#标签</h1>
+  <ul class="tags">
+<!--  cycles through tag list and creates header row of all tags used in site with accompanying per-tag counts...-->
   
     
+    <li ><a href="#%E6%8A%80%E6%9C%AF" class="tag">技术 <span>(3)</span></a></li>
   
-    <el-tab-pane label="技术" name="0"> 
-        <ol class="post-card-box clearfix">
-        
-          
-        
-          
-        <li>
-            <div class="post-card">
-              <a href="/SynologyAssistant02/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
-              </a>
-        
-              <div class="post-card-body">
-                  
-                  <a href="/tags#技术" class="tag">|&#32;技术</a>
-                  
-                  <a href="/SynologyAssistant02/" class="post-card-link"><h3 class="post-card-title">手把手教你黑群晖（二）</h3></a>
-              </div>
-            </div>
-        </li>
-          
-        
-          
-        <li>
-            <div class="post-card">
-              <a href="/SynologyAssistant01/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
-              </a>
-        
-              <div class="post-card-body">
-                  
-                  <a href="/tags#技术" class="tag">|&#32;技术</a>
-                  
-                  <a href="/SynologyAssistant01/" class="post-card-link"><h3 class="post-card-title">手把手教你黑群晖（一）</h3></a>
-              </div>
-            </div>
-        </li>
-          
-        
-          
-        <li>
-            <div class="post-card">
-              <a href="/GithubPage/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
-              </a>
-        
-              <div class="post-card-body">
-                  
-                  <a href="/tags#技术" class="tag">|&#32;技术</a>
-                  
-                  <a href="/GithubPage/" class="post-card-link"><h3 class="post-card-title">使用Github Page 搭建简易博客</h3></a>
-              </div>
-            </div>
-        </li>
-          
-        
-        </ol>
-    </el-tab-pane>
+    
+    <li ><a href="#%E6%B5%8B%E8%AF%95" class="tag">测试 <span>(1)</span></a></li>
+  
+  </ul>
+<!--cycles through tag list and creates subheader for each tag name...-->
+  
+    
+  <h2 id="%E6%8A%80%E6%9C%AF">技术</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/SynologyAssistant02/">手把手教你黑群晖（二）</a></span>
+        <small><span>| 12 Jul 2019</span></small>
+    </div>
+    
+    <div class="tag-list">
+        <span><a href="/SynologyAssistant01/">手把手教你黑群晖（一）</a></span>
+        <small><span>| 12 Jul 2019</span></small>
+    </div>
+    
+    <div class="tag-list">
+        <span><a href="/GithubPage/">使用Github Page 搭建简易博客</a></span>
+        <small><span>| 11 Jul 2019</span></small>
+    </div>
     
   
     
-  
-    <el-tab-pane label="生活" name="1"> 
-        <ol class="post-card-box clearfix">
-        
-          
-        <li>
-            <div class="post-card">
-              <a href="/life01/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
-              </a>
-        
-              <div class="post-card-body">
-                  
-                  <a href="/tags#测试" class="tag">|&#32;测试</a>
-                  
-                  <a href="/life01/" class="post-card-link"><h3 class="post-card-title">生活中的思考</h3></a>
-              </div>
-            </div>
-        </li>
-          
-        
-          
-        
-          
-        
-          
-        
-        </ol>
-    </el-tab-pane>
+  <h2 id="%E6%B5%8B%E8%AF%95">测试</h2>
+<!--  lists all posts corresponding to specific tag...-->
+    
+    <div class="tag-list">
+        <span><a href="/life01/">生活中的思考</a></span>
+        <small><span>| 13 Jul 2019</span></small>
+    </div>
     
   
-</el-tabs>
-</div>
-
-
+</section>
 
   <div class="search-box">
   <div class="wrapper">
