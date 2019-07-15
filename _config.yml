@@ -48,7 +48,7 @@ plugins:
 
 include: [_pages]
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "package-lock.json", "assets/css/sass/"]
-destination: _sites
+destination: _ssss
 
 tag_page_layout: tag
 tag_page_dir: tag
