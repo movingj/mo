@@ -39,14 +39,14 @@ paginate_path: /page:num/
 
 # Build settings
 markdown: kramdown
-
+Safe: False
 plugins:
   - jekyll-paginate
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-tagging
 
-include: [_pages,_site]
+include: [_pages]
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "package-lock.json", "assets/css/sass/"]
 
 
