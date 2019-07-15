@@ -50,7 +50,7 @@ include: [_pages]
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "package-lock.json", "assets/css/sass/"]
 
 
-tag_page_layout: home-page
+tag_page_layout: tag
 tag_page_dir: tag
 tag_feed_layout: tag_feed
 tag_feed_dir: tag
