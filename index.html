@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>江世杰的个人博客 - MovingJ</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#311e3e">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#311e3e">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+	<!-- Google Fonts -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet"> -->
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!-- element ui -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<style>
+	.el-menu{
+		border-right:0;
+	}
+
+	</style>
+</head>
+
+<body>
+  
+  <!-- JS -->
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/jekyll-search.js"></script>
+
+<script src="/assets/js/main.js"></script>
+
+<!-- Element UI -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+$(function(){
+
+  new Vue({
+      el: '#app',
+      data() {
+        return { 
+          visible: false,
+          dialogVisible: false,
+          activeName:'0'
+        
+        
+         }
+      },
+
+  })
+
+
+
+
+
+
+  $("#SOHUCS").bind("DOMNodeInserted",function(e){
+    console.log('afasdsa');
+    $("#pop_ad").remove();
+    $(".wrap-user-gw").remove();
+    $("#feedAv").remove();
+  })
+
+
+})
+
+</script>
+<script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '/search.json',
+      searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+      noResultsText: 'No results found',
+      fuzzy: false,
+      exclude: ['Welcome']
+    });
+  </script>
+
+
+
+
+
+  <div class="flex-container">
+  
+<header id="header" class="main-header">
+  <div class="wrapper">
+    <div class="header-flex">
+      <div class="menu-icon-container">
+        <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </div>
+      <nav class="main-nav">
+        <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <ul>
+          <li><a href="/">首页</a></li>
+          <!-- <li><a href="/message">留言板</a></li> -->
+          <li><a href="/about">关于我</a></li>
+          <li><a href="#">文章</a></li>
+ 
+        
+        </ul>
+            <el-menu
+            default-active="2"
+            class="el-menu-vertical-demo"
+            @select="handleSelect">
+            <el-submenu index="1">
+              <template slot="title">
+               
+                <span>所有分类</span>
+              </template>
+              <el-menu-item-group>
+                <!-- <template slot="title">分组一</template> -->
+                
+               
+                <el-menu-item index="/tag/%E6%8A%80%E6%9C%AF" > %E6%8A%80%E6%9C%AF</el-menu-item>
+               
+                
+               
+                <el-menu-item index="/tag/%E6%B5%8B%E8%AF%95" > %E6%B5%8B%E8%AF%95</el-menu-item>
+               
+                
+         
+        
+              </el-menu-item-group>
+            </el-submenu>
+            </el-menu>
+    
+  
+ 
+      </nav>
+
+      <p class="logo"><a href="/">Moving J</a></p>
+      <div class="search-icon-container">
+        <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
+      </div>
+    </div>
+  </div>
+</header> <!-- End Header -->
+
+<script>
+  new Vue({
+      el: '#header',
+      methods:{
+        handleSelect(key, keyPath) {
+         
+         location.href=keyPath[1];
+        }
+      }
+  })
+
+</script>
+
+
+  <div class="content wrapper">
+    
+
+<div id="app">
+<el-tabs v-model="activeName" stretch="true">
+
+  
+    
+  
+    <el-tab-pane label="技术" name="0"> 
+        <ol class="post-card-box clearfix">
+        
+          
+        
+          
+        <li>
+            <div class="post-card">
+              <a href="/SynologyAssistant02/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
+              </a>
+        
+              <div class="post-card-body">
+                  
+                  <a href="/tags#技术" class="tag">|&#32;技术</a>
+                  
+                  <a href="/SynologyAssistant02/" class="post-card-link"><h3 class="post-card-title">手把手教你黑群晖（二）</h3></a>
+              </div>
+            </div>
+        </li>
+          
+        
+          
+        <li>
+            <div class="post-card">
+              <a href="/SynologyAssistant01/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
+              </a>
+        
+              <div class="post-card-body">
+                  
+                  <a href="/tags#技术" class="tag">|&#32;技术</a>
+                  
+                  <a href="/SynologyAssistant01/" class="post-card-link"><h3 class="post-card-title">手把手教你黑群晖（一）</h3></a>
+              </div>
+            </div>
+        </li>
+          
+        
+          
+        <li>
+            <div class="post-card">
+              <a href="/GithubPage/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
+              </a>
+        
+              <div class="post-card-body">
+                  
+                  <a href="/tags#技术" class="tag">|&#32;技术</a>
+                  
+                  <a href="/GithubPage/" class="post-card-link"><h3 class="post-card-title">使用Github Page 搭建简易博客</h3></a>
+              </div>
+            </div>
+        </li>
+          
+        
+        </ol>
+    </el-tab-pane>
+    
+  
+    
+  
+    <el-tab-pane label="生活" name="1"> 
+        <ol class="post-card-box clearfix">
+        
+          
+        <li>
+            <div class="post-card">
+              <a href="/life01/" class="post-card-image" style="background-image: url( /assets/img/post-1.jpg )">
+              </a>
+        
+              <div class="post-card-body">
+                  
+                  <a href="/tags#测试" class="tag">|&#32;测试</a>
+                  
+                  <a href="/life01/" class="post-card-link"><h3 class="post-card-title">生活中的思考</h3></a>
+              </div>
+            </div>
+        </li>
+          
+        
+          
+        
+          
+        
+          
+        
+        </ol>
+    </el-tab-pane>
+    
+  
+</el-tabs>
+</div>
+
+
+
+  <div class="search-box">
+  <div class="wrapper">
+    <div class="search-grid">
+      <form class="search-form">
+        <div id="search-container">
+          <input type="text" id="search-input" class="search" placeholder="Search">
+        </div>
+      </form>
+      <ul id="results-container" class="results-search"></ul>
+      <div class="icon-close-container">
+        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="pagination clearfix">
+  
+  
+</div>
+
+  </div> <!-- End Wrapper -->
+  
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<footer class="main-footer">
+  <div class="copyright">
+    <p>2019 &copy; Moving J</p>
+    <!-- <span id="busuanzi_value_site_pv"></span>次 -->
+  </div>
+
+</footer> <!-- End Footer -->
+
+</div>
+
+  
+
+</body>
+</html>
