@@ -46,9 +46,8 @@ plugins:
   - jekyll-sitemap
   - jekyll-tagging
 
-include: [_pages]
+include: [_pages,_site]
 exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "package-lock.json", "assets/css/sass/"]
-destination: _ssss
 
 
 tag_page_layout: tag
