@@ -28,7 +28,7 @@
                 <!-- <template slot="title">分组一</template> -->
                 {% for category in site.tags %}
                
-                <el-menu-item index="{{site.baseurl}}/tag/{{ (category | first) | url_encode   }}" > {{category | first | url_encode   }}</el-menu-item>
+                <el-menu-item index="{{site.baseurl}}/tag/{{ (category | first)   }}" > {{site.baseurl}}/tag/{{ (category | first)   }}</el-menu-item>
                
                 {% endfor %}
          
