@@ -12,30 +12,32 @@
           <!-- <li><a href="{{site.baseurl}}/message">留言板</a></li> -->
           <li><a href="{{site.baseurl}}/about">关于我</a></li>
           <li><a href="#">文章</a></li>
- 
+          <li>
+
+          </li>
         
         </ul>
-            <el-menu
-            default-active="2"
-            class="el-menu-vertical-demo"
-            @select="handleSelect">
-            <el-submenu index="1">
-              <template slot="title">
-               
-                <span>所有分类</span>
-              </template>
-              <el-menu-item-group>
-                <!-- <template slot="title">分组一</template> -->
-                {% for category in site.tags %}
-               
-                <el-menu-item index="{{site.baseurl}}/tag/{{ category | first   }}" > {{category | first }}</el-menu-item>
-               
-                {% endfor %}
-         
-        
-              </el-menu-item-group>
-            </el-submenu>
-            </el-menu>
+        <el-menu
+        default-active="2"
+        class="el-menu-vertical-demo"
+        @select="handleSelect">
+        <el-submenu index="1">
+          <template slot="title">
+           
+            <span>所有分类</span>
+          </template>
+          <el-menu-item-group>
+            <!-- <template slot="title">分组一</template> -->
+            {% for category in site.tags %}
+           
+            <el-menu-item index="{{site.baseurl}}/tag/{{ category | first   }}" > {{category | first }}</el-menu-item>
+           
+            {% endfor %}
+     
+    
+          </el-menu-item-group>
+        </el-submenu>
+        </el-menu>
     
   
  

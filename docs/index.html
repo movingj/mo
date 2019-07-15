@@ -32,6 +32,7 @@
 		border-right:0;
 	}
 
+
 	</style>
 </head>
 
@@ -110,34 +111,36 @@ $(function(){
           <!-- <li><a href="/message">留言板</a></li> -->
           <li><a href="/about">关于我</a></li>
           <li><a href="#">文章</a></li>
- 
+          <li>
+
+          </li>
         
         </ul>
-            <el-menu
-            default-active="2"
-            class="el-menu-vertical-demo"
-            @select="handleSelect">
-            <el-submenu index="1">
-              <template slot="title">
-               
-                <span>所有分类</span>
-              </template>
-              <el-menu-item-group>
-                <!-- <template slot="title">分组一</template> -->
-                
-               
-                <el-menu-item index="/tag/技术" > 技术</el-menu-item>
-               
-                
-               
-                <el-menu-item index="/tag/测试" > 测试</el-menu-item>
-               
-                
-         
-        
-              </el-menu-item-group>
-            </el-submenu>
-            </el-menu>
+        <el-menu
+        default-active="2"
+        class="el-menu-vertical-demo"
+        @select="handleSelect">
+        <el-submenu index="1">
+          <template slot="title">
+           
+            <span>所有分类</span>
+          </template>
+          <el-menu-item-group>
+            <!-- <template slot="title">分组一</template> -->
+            
+           
+            <el-menu-item index="/tag/技术" > 技术</el-menu-item>
+           
+            
+           
+            <el-menu-item index="/tag/测试" > 测试</el-menu-item>
+           
+            
+     
+    
+          </el-menu-item-group>
+        </el-submenu>
+        </el-menu>
     
   
  

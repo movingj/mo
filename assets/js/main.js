@@ -16,7 +16,7 @@ $(function () {
   // Click outside of menu to close it
   flexContainer.click(function (e) {
     console.log();
-    if( $(e.target).hasClass("el-submenu__title") || $(e.target).hasClass("el-submenu__icon-arrow") ){
+    if( $(e.target).hasClass("el-submenu") || $(e.target).hasClass("el-submenu__title") || $(e.target).hasClass("el-submenu__icon-arrow") ){
       return;
     }
     if (flexContainer.hasClass('active') && e.target.tagName !== 'A' ) {
