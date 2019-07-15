@@ -24,6 +24,7 @@ layout: home-page
                   <a href="{{site.baseurl}}/tags#{{tag}}" class="tag">|&#32;{{ tag }}</a>
                   {% endfor %}
                   <a href="{{post.url | prepend: site.baseurl}}" class="post-card-link"><h3 class="post-card-title">{{post.title}}</h3></a>
+                  <a href="{{post.url | prepend: site.baseurl}}" class="post-card-link"></a><h3 class="post-card-title">{{post.date | date: '%Y/%m/%d'}}</h3></a>
               </div>
             </div>
         </li>

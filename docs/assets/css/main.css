@@ -1659,13 +1659,21 @@ pre code {
     margin-left: 0.5%;
     margin-bottom: 0.5%;
   }
-  .recent-box .recent-list .recent-item span {
+  .recent-box .recent-list .recent-item span:nth-child(1) {
     position: absolute;
     font-size: 12px;
     left: 2.5%;
     bottom: 10%;
     color: #fff;
   }
+  .recent-box .recent-list .recent-item span:nth-child(2) {
+    position: absolute;
+    font-size: 12px;
+    left: 2.5%;
+    bottom: 1%;
+    color: #fff;
+  }
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -1701,7 +1709,7 @@ pre code {
   .recent-box .recent-list .recent-item {
     position: relative;
     display: inline-block;
-    width: 99%;
+    width: 45%;
     height: 150px;
     margin-left: 0.5%;
     margin-bottom: 0.5%;
