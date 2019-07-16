@@ -938,17 +938,18 @@ pre code {
           transform: translate3d(-300px, 0, 0);
 }
 
-.main-nav ul {
+.main-nav .nav {
   padding: 15px 0 0;
   margin: 0;
   list-style: none;
 }
 
-.main-nav ul li {
+.main-nav .nav li {
   border-bottom: 1px solid #d9d9d9;
+  padding-left: 20px;
 }
 
-.main-nav ul li a {
+.main-nav .nav li a {
   display: block;
   padding: 15px 0;
   text-decoration: none;
@@ -958,7 +959,7 @@ pre code {
   color: #311e3e;
 }
 
-.main-nav ul li a:hover {
+.main-nav .nav li a:hover {
   opacity: .8;
   color: #87314e;
 }

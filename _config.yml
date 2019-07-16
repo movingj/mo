@@ -37,6 +37,7 @@ discus_identifier: mr-brown # Add your discus identifier
 paginate: 6
 paginate_path: /page:num/
 
+
 # Build settings
 markdown: kramdown
 
