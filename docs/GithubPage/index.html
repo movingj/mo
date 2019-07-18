@@ -34,6 +34,11 @@
 	.el-submenu__title{
 		font-size: 18px;
 	}
+	.gotop{
+		position: fixed;
+    	right: 1em;
+    	bottom: 1em;
+	}
 
 
 	</style>
@@ -69,6 +74,11 @@ $(function(){
         
          }
       },
+      methods:{
+        gotop(){
+            $("html,body").animate({scrollTop:0},"fast");;
+        }
+      }
 
   })
 
@@ -363,29 +373,8 @@ https://rubyinstaller.org/downloads/</p>
 </div> <!-- End Recent-Box -->
 
       
-        <section class="comment-area">
-  <div class="comment-wrapper">
-    
-    <div id="disqus_thread" class="article-comments"></div>
-    <script>
-      (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//mr-brown.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-      })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
-  </div>
-
-
-
-
-
-</section> <!-- End Comment Area -->
-
       </div>
+      <el-button @click="gotop" class="gotop" type="primary" icon="el-icon-top" circle></el-button>
 
       <el-dialog
           title=""

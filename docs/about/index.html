@@ -34,6 +34,11 @@
 	.el-submenu__title{
 		font-size: 18px;
 	}
+	.gotop{
+		position: fixed;
+    	right: 1em;
+    	bottom: 1em;
+	}
 
 
 	</style>
@@ -69,6 +74,11 @@ $(function(){
         
          }
       },
+      methods:{
+        gotop(){
+            $("html,body").animate({scrollTop:0},"fast");;
+        }
+      }
 
   })
 
