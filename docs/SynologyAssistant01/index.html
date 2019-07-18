@@ -111,7 +111,7 @@ $(function(){
 
 
 
-  <div class="flex-container">
+  <div id="app" class="flex-container">
   
 <header id="header" class="main-header">
   <div class="wrapper">
@@ -174,8 +174,8 @@ $(function(){
       el: '#header',
       methods:{
         handleSelect(key, keyPath) {
-         
-         location.href=keyPath[1];
+          
+          location.href=keyPath[1];
         }
       }
   })
@@ -260,6 +260,11 @@ $(function(){
   <p><strong>下一篇会教你们怎样把把你的群晖洗白！</strong></p>
 </blockquote>
 
+
+        <div style="text-align:center">
+          
+          <el-button @click="dialogVisible = true"  type="primary" icon="el-icon-share" circle></el-button>
+        </div>
         <div class="page-footer">
           <div class="page-tag">
             <span>Tags:</span>
@@ -269,11 +274,13 @@ $(function(){
           </div><!-- End Tags -->
           <div class="page-share">
             <span>Share:</span>
+            <!-- <a href="javascript:void()" @click="dialogVisible = true" title="Share" rel="nofollow" target="_blank"><i class="fa fa-share" aria-hidden="true"></i></a> -->
             <!-- <a href="https://twitter.com/intent/tweet?text=手把手教你黑群晖（一）&url=http://localhost:4000/SynologyAssistant01/" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             <a href="https://facebook.com/sharer.php?u=http://localhost:4000/SynologyAssistant01/" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a href="https://plus.google.com/share?url=http://localhost:4000/SynologyAssistant01/" title="Share on Google+" rel="nofollow" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a> -->
           </div><!-- End Share -->
         </div>
+
         <section class="author-box">
   <img src="/assets/img/movingj.png" alt="Moving J" class="author-img">
   <div class="author-desc">
@@ -386,6 +393,17 @@ $(function(){
 
 </footer> <!-- End Footer -->
 
+
+
+    <el-dialog
+  title=""
+  :visible.sync="dialogVisible"
+  width="200px"
+  top="30vh"
+  >
+  <img src="http://b.bshare.cn/barCode?site=weixin&url=http://localhost:4000/SynologyAssistant01/" alt="Moving J" width="200" height="200">
+
+  </el-dialog>
 </div>
 
   

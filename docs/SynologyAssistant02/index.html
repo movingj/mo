@@ -111,7 +111,7 @@ $(function(){
 
 
 
-  <div class="flex-container">
+  <div id="app" class="flex-container">
   
 <header id="header" class="main-header">
   <div class="wrapper">
@@ -174,8 +174,8 @@ $(function(){
       el: '#header',
       methods:{
         handleSelect(key, keyPath) {
-         
-         location.href=keyPath[1];
+          
+          location.href=keyPath[1];
         }
       }
   })
@@ -234,6 +234,11 @@ mac1=001132C3468F，也是有三处的，修改完之后如图所示。</p>
   <p>进入群晖系统，会发现QuickConnect 等远程功能可以使用了，不会像之前那样报错。</p>
 </blockquote>
 
+
+        <div style="text-align:center">
+          
+          <el-button @click="dialogVisible = true"  type="primary" icon="el-icon-share" circle></el-button>
+        </div>
         <div class="page-footer">
           <div class="page-tag">
             <span>Tags:</span>
@@ -243,11 +248,13 @@ mac1=001132C3468F，也是有三处的，修改完之后如图所示。</p>
           </div><!-- End Tags -->
           <div class="page-share">
             <span>Share:</span>
+            <!-- <a href="javascript:void()" @click="dialogVisible = true" title="Share" rel="nofollow" target="_blank"><i class="fa fa-share" aria-hidden="true"></i></a> -->
             <!-- <a href="https://twitter.com/intent/tweet?text=手把手教你黑群晖（二）&url=http://localhost:4000/SynologyAssistant02/" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             <a href="https://facebook.com/sharer.php?u=http://localhost:4000/SynologyAssistant02/" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a href="https://plus.google.com/share?url=http://localhost:4000/SynologyAssistant02/" title="Share on Google+" rel="nofollow" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a> -->
           </div><!-- End Share -->
         </div>
+
         <section class="author-box">
   <img src="/assets/img/movingj.png" alt="Moving J" class="author-img">
   <div class="author-desc">
@@ -360,6 +367,17 @@ mac1=001132C3468F，也是有三处的，修改完之后如图所示。</p>
 
 </footer> <!-- End Footer -->
 
+
+
+    <el-dialog
+  title=""
+  :visible.sync="dialogVisible"
+  width="200px"
+  top="30vh"
+  >
+  <img src="http://b.bshare.cn/barCode?site=weixin&url=http://localhost:4000/SynologyAssistant02/" alt="Moving J" width="200" height="200">
+
+  </el-dialog>
 </div>
 
   
