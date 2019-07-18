@@ -63,6 +63,7 @@ $(function(){
         return { 
           visible: false,
           dialogVisible: false,
+          shareDialog:false,
           activeName:'0'
         
         
@@ -111,7 +112,7 @@ $(function(){
 
 
 
-  <div id="app" class="flex-container">
+  <div  class="flex-container">
   
 <header id="header" class="main-header">
   <div class="wrapper">
@@ -187,7 +188,7 @@ $(function(){
     <div class="page-image">
       <div class="cover-image" style="background: url(/assets/img/post-1.jpg) center no-repeat; background-size: cover;"></div>
     </div>
-    <div class="wrapper">
+    <div class="wrapper" id="app">
       <div class="page-content">
         <div class="header-page">
           <h1 class="page-title">使用Github Page 搭建简易博客</h1>
@@ -281,19 +282,20 @@ https://rubyinstaller.org/downloads/</p>
 
 
 
-        <div style="text-align:center">
+        <div  style="text-align:center">
           
-          <el-button @click="dialogVisible = true"  type="primary" icon="el-icon-share" circle></el-button>
+          <el-button @click="shareDialog = true"  type="primary" icon="el-icon-share" circle></el-button>
+    
         </div>
         <div class="page-footer">
           <div class="page-tag">
-            <span>Tags:</span>
+            <span>分类:</span>
             
             <a href="/tags#技术" class="tag">| 技术</a>
             
           </div><!-- End Tags -->
           <div class="page-share">
-            <span>Share:</span>
+            <!-- <span>Share:</span> -->
             <!-- <a href="javascript:void()" @click="dialogVisible = true" title="Share" rel="nofollow" target="_blank"><i class="fa fa-share" aria-hidden="true"></i></a> -->
             <!-- <a href="https://twitter.com/intent/tweet?text=使用Github Page 搭建简易博客&url=http://localhost:4000/GithubPage/" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             <a href="https://facebook.com/sharer.php?u=http://localhost:4000/GithubPage/" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -384,6 +386,16 @@ https://rubyinstaller.org/downloads/</p>
 </section> <!-- End Comment Area -->
 
       </div>
+
+      <el-dialog
+          title=""
+          :visible.sync="shareDialog"
+          width="200px"
+          top="30vh"
+          >
+          <img src="http://b.bshare.cn/barCode?site=weixin&url=http://localhost:4000/GithubPage/" alt="Moving J" width="200" height="200">
+        
+          </el-dialog>
     </div> <!-- End Wrapper -->
   </article>
   <div class="search-box">
@@ -413,17 +425,8 @@ https://rubyinstaller.org/downloads/</p>
 
 </footer> <!-- End Footer -->
 
-  <div class="bshare-custom icon-medium"><a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more">分享到</a><a title="分享到QQ空间" class="bshare-weixin"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren"></a><a title="分享到腾讯微博" class="bshare-qqmb"></a><a title="分享到网易微博" class="bshare-neteasemb"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
 
-    <el-dialog
-  title=""
-  :visible.sync="dialogVisible"
-  width="200px"
-  top="30vh"
-  >
-  <img src="http://b.bshare.cn/barCode?site=weixin&url=http://localhost:4000/GithubPage/" alt="Moving J" width="200" height="200">
-
-  </el-dialog>
+ 
 </div>
 
   
