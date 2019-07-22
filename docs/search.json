@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Vue 项目配置多页面入口",
+      "category" : "技术",
+      "tags"     : "技术",
+      "url"      : "/Vue_multipage/",
+      "date"     : "2019-07-22 00:00:00 +0800"
+    } ,
+  
+    {
       "title"    : "生活中的思考",
       "category" : "生活",
       "tags"     : "测试",

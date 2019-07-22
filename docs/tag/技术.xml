@@ -3,11 +3,88 @@
  <title>Your Title - 技术</title>
  <link href="/tag/%E6%8A%80%E6%9C%AF.xml" rel="self"/>
  <link href="/tag/技术.html"/>
- <updated>2019-07-18T15:57:06+08:00</updated>
+ <updated>2019-07-22T14:44:26+08:00</updated>
  <id>/tag/技术.html</id>
  <author>
    <name>Author Here</name>
  </author>
+ 
+ <entry>
+   <title>Vue 项目配置多页面入口</title>
+   <link href="//Vue_multipage/"/>
+   <updated>2019-07-22T00:00:00+08:00</updated>
+   <id>/Vue_multipage</id>
+   <content type="html">&lt;p&gt;Vue 项目配置多入口&lt;/p&gt;
+
+&lt;p&gt;在Src目录下新建pages文件夹，入口页面都放在里面&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/44a8c044-3fca-451b-a34f-7d60d80ae634/1563776718541.png&quot; alt=&quot;1563776718541&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;添加入口路径&lt;/p&gt;
+
+&lt;p&gt;首先修改 build / utils.js文件&lt;/p&gt;
+
+&lt;p&gt;在底部插入以下代码&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;　　　//多页面输出配置
+　　　// 与上面的多页面入口配置相同，读取pages文件夹下的对应的html后缀文件，然后放入数组中
+exports.htmlPlugin = function() {
+　let entryHtml = glob.sync(PAGE_PATH + '/*/*.html')
+　let arr = []
+　entryHtml.forEach((filePath) =&amp;gt; {
+　let filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'))
+　let conf = {
+　　　　// 模板来源
+　	template: filePath,
+　　　　// 文件名称
+　	filename: filename + '.html',
+　　　　// 页面模板需要加对应的js脚本，如果不加这行则每个页面都会引入所有的js脚本
+　	chunks: ['manifest', 'vendor', filename],
+　	inject: true
+　}
+　　if (process.env.NODE_ENV === 'production') {
+　　　conf = merge(conf, {
+　　　	minify: {
+　　　	removeComments: true,
+　　　	collapseWhitespace: true,
+　　　	removeAttributeQuotes: true
+　　　},
+　　　	chunksSortMode: 'dependency'
+　　　})
+　　}
+　　arr.push(new HtmlWebpackPlugin(conf))
+　　})
+　　return arr
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后修改 build / webpack.base.conf.js 文件&lt;/p&gt;
+
+&lt;p&gt;entry 修改为&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; entry:utils.entries,
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/966715fb-5ee4-4673-8a58-50e279859c29/1563777277234.png&quot; alt=&quot;1563777277234&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这样以后只要直接在pages里新建入口文件，就会自动遍历读取，不用再次修改配置文件&lt;/p&gt;
+
+&lt;p&gt;修改 build / webpack.dev.conf.js 文件&lt;/p&gt;
+
+&lt;p&gt;添加对应代码，例如我的pages下有 admin 和 login 两个入口&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/3af72038-8880-43ee-8757-5fb262a27a8f/1563777537126.png&quot; alt=&quot;1563777540526&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;有多少个入口就添加多少项&lt;/p&gt;
+
+&lt;p&gt;然后再修改 build / webpack.prod.conf.js 文件&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/5fa02d5a-c1e6-4f60-addb-e14a3da9ee36/1563777763174.png&quot; alt=&quot;1563777763174&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;至此。。多个入口配置已经完成 。&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>手把手教你黑群晖（二）</title>
