@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Vue 如何传值",
+      "category" : "技术",
+      "tags"     : "技术",
+      "url"      : "/Vue_transmit/",
+      "date"     : "2019-07-22 00:00:00 +0800"
+    } ,
+  
+    {
       "title"    : "Vue 项目配置多页面入口",
       "category" : "技术",
       "tags"     : "技术",

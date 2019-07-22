@@ -1,5 +1,89 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-22T15:09:54+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">江世杰的个人博客 - MovingJ</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><author><name>Moving J</name></author><entry><title type="html">Vue 项目配置多页面入口</title><link href="http://localhost:4000/Vue_multipage/" rel="alternate" type="text/html" title="Vue 项目配置多页面入口" /><published>2019-07-22T00:00:00+08:00</published><updated>2019-07-22T00:00:00+08:00</updated><id>http://localhost:4000/Vue_multipage</id><content type="html" xml:base="http://localhost:4000/Vue_multipage/">&lt;p&gt;Vue 项目配置多入口&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-22T15:27:43+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">江世杰的个人博客 - MovingJ</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</subtitle><author><name>Moving J</name></author><entry><title type="html">Vue 如何传值</title><link href="http://localhost:4000/Vue_transmit/" rel="alternate" type="text/html" title="Vue 如何传值" /><published>2019-07-22T00:00:00+08:00</published><updated>2019-07-22T00:00:00+08:00</updated><id>http://localhost:4000/Vue_transmit</id><content type="html" xml:base="http://localhost:4000/Vue_transmit/">&lt;h3 id=&quot;子组件获取父组件的变量&quot;&gt;&lt;strong&gt;子组件获取父组件的变量&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;父：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+      &amp;lt;tbar :aa=&quot;aa&quot;&amp;gt;&amp;lt;/tbar&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+export default {
+    data () {
+         return {
+              aa:'-1',
+         },
+    }
+}
+&amp;lt;/script&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;子：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+          //此处是显示从父获取到的变量 aa
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template
+
+&amp;lt;script&amp;gt;
+export default{
+   props:['aa'],
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;父组件获取子组件的变量&quot;&gt;&lt;strong&gt;父组件获取子组件的变量&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;在引用的子组件添加属性：ref = “tbar”，指向子组件对象，&lt;/li&gt;
+  &lt;li&gt;然后通过 this.$refs.tbar.变量名，读取子组件的变量&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;父：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+   &amp;lt;div&amp;gt;
+       &amp;lt;tbar ref=&quot;tbar&quot;&amp;gt;&amp;lt;/tbar&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+export default {
+    methods: {
+         getChild(){
+              return this.$refs.tbar.bb;
+        },
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;子：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+   &amp;lt;div&amp;gt; 
+    &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&amp;lt;script&amp;gt;
+   export default{
+         data () {
+            return {
+                bb:'我是子组件'
+             }
+         }
+     }
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Moving J</name></author><category term="技术" /><category term="技术" /><summary type="html">子组件获取父组件的变量</summary></entry><entry><title type="html">Vue 项目配置多页面入口</title><link href="http://localhost:4000/Vue_multipage/" rel="alternate" type="text/html" title="Vue 项目配置多页面入口" /><published>2019-07-22T00:00:00+08:00</published><updated>2019-07-22T00:00:00+08:00</updated><id>http://localhost:4000/Vue_multipage</id><content type="html" xml:base="http://localhost:4000/Vue_multipage/">&lt;p&gt;Vue 项目配置多入口&lt;/p&gt;
 
 &lt;p&gt;在Src目录下新建pages文件夹，入口页面都放在里面&lt;/p&gt;
 
