@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 手把手教你黑群晖（一）
-img: post-1.jpg
+img: synology.jpg
 date: 2019-07-12
 tag: 技术
 category: 技术

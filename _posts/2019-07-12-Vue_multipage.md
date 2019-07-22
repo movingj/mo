@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Vue 项目配置多页面入口
-img: post-1.jpg
+img: vue.jpg
 date: 2019-07-22
 tag: 技术
 category:  技术

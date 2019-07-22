@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 使用Github Page 搭建简易博客
-img: post-1.jpg
+img: github.jpg
 date: 2019-07-11
 tag: 技术
 category: 技术
