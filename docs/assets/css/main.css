@@ -1646,8 +1646,9 @@ pre code {
     font-size: 24px;
   }
   .post-card-box li {
-    width: 50%;
-    margin-bottom: 20px;
+    width: 49%;
+    margin-left:1%;
+    margin-bottom: 2%;
   }
   .post-card-box li:last-child {
     margin-bottom: 0;
