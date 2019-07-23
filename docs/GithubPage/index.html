@@ -64,19 +64,27 @@ $(function(){
 
   new Vue({
       el: '#app',
+      mounted(){
+        var userAgent = navigator.userAgent;
+        var isSafari = userAgent.indexOf("Safari") > -1
+            && userAgent.indexOf("Chrome") == -1; 
+        if( !isSafari )
+            this.showTop = true;
+      },
       data() {
         return { 
           visible: false,
           dialogVisible: false,
           shareDialog:false,
-          activeName:'0'
+          activeName:'0',
+          showTop:false
         
         
          }
       },
       methods:{
         gotop(){
-            $(document).animate({'scrollTop':0},"fast");
+            $("body").animate({'scrollTop':0},"fast");
         }
       }
 
@@ -374,7 +382,7 @@ https://rubyinstaller.org/downloads/</p>
 
       
       </div>
-      <el-button @click="gotop" class="gotop" type="primary" icon="el-icon-caret-top" circle></el-button>
+      <el-button @click="gotop" v-show="showTop" class="gotop" type="primary" icon="el-icon-caret-top" circle></el-button>
 
       <el-dialog
           title=""

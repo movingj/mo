@@ -16,19 +16,27 @@ $(function(){
 
   new Vue({
       el: '#app',
+      mounted(){
+        var userAgent = navigator.userAgent;
+        var isSafari = userAgent.indexOf("Safari") > -1
+            && userAgent.indexOf("Chrome") == -1; 
+        if( !isSafari )
+            this.showTop = true;
+      },
       data() {
         return { 
           visible: false,
           dialogVisible: false,
           shareDialog:false,
-          activeName:'0'
+          activeName:'0',
+          showTop:false
         
         
          }
       },
       methods:{
         gotop(){
-            $(document).animate({'scrollTop':0},"fast");
+            $("body").animate({'scrollTop':0},"fast");
         }
       }
 
