@@ -17,9 +17,8 @@ layout: default
           <div class="page-date"><time datetime="{{page.date}}">{{page.date | date: '%Y, %b %d'}}</time></div>
         </div>
         <ol class="post-card-box clearfix">
-
-          {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-            {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+ 
+        
             {% for post in site.tags[page.tag] %}{% if post.title != null %}
           <li>
               <div class="post-card">
@@ -35,7 +34,6 @@ layout: default
               </div>
           </li>
             {% endif %}{% endfor %}
-          {% endunless %}{% endfor %}
 
           </ol>
 
