@@ -1,59 +1,136 @@
-title: 江世杰的个人博客 - MovingJ
-email: moving_j@aliyun.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-permalink: ':title/'
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-pp: "http://pershares.com"
-# Author settings
-author: Moving J # add your name
-author-pic: movingj.png
-author-qrcode: movingj-qrcode.png
-about-author: 我叫江世杰，来自中国广州，全栈工程师，热爱研究新技术，目前主要倾向前端技术，帮助企业建站，微信小程序开发。
+# Site settings
+title: Wblearn Blog
+SEOTitle: Wblearn的博客 | Wblearn Blog
+header-img: img/home-bg-art.jpg
+email: 1275660493@qq.com
+description: "@wblearn,不要让任何事情成为你不去学习的理由！"
+keyword: "wblearn, @wblearn, wblearn的博客,wblearn Blog, 博客, 个人网站, 互联网"
+url: "http://wblearn.github.io/"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
-# Contact links
-email: moving_j@aliyun.com
-phone: # Add your Phone number
-wechat: mov1ng
-website: # Add your website, do not add http://
-weibo: https://weibo.com/m0ving
-linkedin: movingj 
-github: movingj
-twitter: '@artemsheludko_' # Add your Twitter handle
-facebook: # Add your Facebook handle
-instagram: # Add your Instagram handle
-pinterest: # Add your Pinterest handle
 
-# Newsletter
-mailchimp: # Add your MailChimp form identifier.
 
-# Disqus
-discus_identifier: mr-brown # Add your discus identifier
+# SNS settings
+RSS: false
+weibo_username:     wudalanggd
+csdn_username:     wudalang_gd
+github_username:    wblearn
+#twitter_username:  wblearn
+jianshu_username:  48599dc7ef1b
+sv_username: study-video
+# linkedin_username:  firstname-lastname-idxxxx
 
-# Paginate
-paginate: 6
-paginate_path: /page:num/
 
 
 # Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
-
-plugins:
-  - jekyll-paginate
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-tagging
-
-include: [_pages]
-exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock", "package-lock.json", "assets/css/sass/"]
-destination: docs
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
 
 
-tag_page_layout: tag
-tag_page_dir: tag
-tag_feed_layout: tag_feed
-tag_feed_dir: tag
 
+# Disqus settings
+#disqus_username: _your_disqus_short_name_
+
+# Duoshuo settings
+duoshuo_username: wblearnblog
+# Share component is depend on Comment so we can NOT use share only.
+duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+
+
+# LiveRe setttings
+# You can get your uid from https://livere.com/insight/myCode (General web site)
+livere_uid: MTAyMC8yODkzOC81NTA3
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
+# Google Analytics
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: wblearn.github.io
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "分享我从工作及其他兴趣爱好中学到的事情" 
+sidebar-avatar: /img/avatar-wb.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+sass:
+  sass_dir: /assets/_sass
+  style: :compressed
+collections:
+  videos:
+    output: true
+    permalink: /:path/
+defaults:
+  -
+    scope:
+      path: ''
+      type: posts
+    values:
+      layout: post
+  -
+    scope:
+      path: ''
+      type: videos
+    values:
+      layout: video
+
+# Friends
+friends: [
+    {
+        title: "wblearn的微博",
+        href: "http://weibo.com/wudalanggd"
+    },{
+        title: "study video",
+        href: "https://wblearn.github.io/study-video"
+    },{
+        title: "垠神的博客",
+        href: "http://www.yinwang.org/"
+    },{
+        title: "阮一峰的网络日志",
+        href: "https://www.ruanyifeng.com/blog/"
+    },{
+        title: "唐巧的博客",
+        href: "http://blog.devtang.com/"
+    }
+]
