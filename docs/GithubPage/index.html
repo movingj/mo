@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>使用Github Page 搭建简易博客 - 江世杰的个人博客 - MovingJ</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#311e3e">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#311e3e">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+	<!-- Google Fonts -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet"> -->
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<!-- element ui -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<style>
+	.el-menu{
+		border-right:0;
+	}
+	.el-submenu__title{
+		font-size: 18px;
+	}
+	.gotop{
+		position: fixed;
+    	right: 1em;
+    	bottom: 1em;
+	}
+
+
+	</style>
+</head>
+
+<body>
+  
+  <!-- JS -->
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<!-- <script src="/assets/js/jekyll-search.js"></script> -->
+
+<script src="/assets/js/main.js"></script>
+
+<script src="/assets/js/simple-jekyll-search.min.js"></script>
+
+
+
+<!-- Element UI -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+$(function(){
+
+  new Vue({
+      el: '#app',
+      mounted(){
+        var userAgent = navigator.userAgent;
+        var isSafari = userAgent.indexOf("Safari") > -1
+            && userAgent.indexOf("Chrome") == -1; 
+        if( !isSafari )
+            this.showTop = true;
+      },
+      data() {
+        return { 
+          visible: false,
+          dialogVisible: false,
+          shareDialog:false,
+          activeName:'0',
+          showTop:false
+        
+        
+         }
+      },
+      methods:{
+        gotop(){
+            $("body").animate({'scrollTop':0},"fast");
+        }
+      }
+
+  })
+
+
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>', // 文章列表模板
+    noResultsText: '没有搜索到文章', // 无搜索数据提示语
+    limit: 20, // 返回最大文章数
+    fuzzy: false // 是否模糊匹配
+  })
+
+
+
+  $("#SOHUCS").bind("DOMNodeInserted",function(e){
+    console.log('afasdsa');
+    $("#pop_ad").remove();
+    $(".wrap-user-gw").remove();
+    $("#feedAv").remove();
+  })
+
+
+})
+
+</script>
+<script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '/search.json',
+      searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+      noResultsText: 'No results found',
+      fuzzy: false,
+      exclude: ['Welcome']
+    });
+  </script>
+
+
+
+
+
+  <div  class="flex-container">
+  
+<header id="header" class="main-header">
+  <div class="wrapper">
+    <div class="header-flex">
+      <div class="menu-icon-container">
+        <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </div>
+      <nav class="main-nav">
+        <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <ul class="nav">
+          <li><a href="/">首页</a></li>
+          <!-- <li><a href="/message">留言板</a></li> -->
+          <li><a href="/about">关于我</a></li>
+          <li><a href="#">文章</a></li>
+          <li>
+
+          </li>
+        
+        </ul>
+        <el-menu
+        default-active="2"
+        class="el-menu-vertical-demo"
+        @select="handleSelect">
+        <el-submenu index="1">
+          <template slot="title">
+           
+            <span>所有分类</span>
+          </template>
+          <el-menu-item-group>
+            <!-- <template slot="title">分组一</template> -->
+            
+           
+            <el-menu-item index="/tag/技术" > 技术</el-menu-item>
+           
+            
+           
+            <el-menu-item index="/tag/测试" > 测试</el-menu-item>
+           
+            
+     
+    
+          </el-menu-item-group>
+        </el-submenu>
+        </el-menu>
+    
+  
+ 
+      </nav>
+
+      <p class="logo"><a href="/">Moving J</a></p>
+      <div class="search-icon-container">
+        <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
+      </div>
+    </div>
+  </div>
+</header> <!-- End Header -->
+
+<script>
+  new Vue({
+      el: '#header',
+      methods:{
+        handleSelect(key, keyPath) {
+          
+          location.href=keyPath[1];
+        }
+      }
+  })
+
+</script>
+
+
+  <article class="article-page">
+    <div class="page-image">
+      <div class="cover-image" style="background: url(/assets/img/github.jpg) center no-repeat; background-size: 100%;"></div>
+    </div>
+    <div class="wrapper" id="app">
+      <div class="page-content">
+        <div class="header-page">
+          <h1 class="page-title">使用Github Page 搭建简易博客</h1>
+          <div class="page-date"><time datetime="2019-07-11 00:00:00 +0800">2019, Jul 11</time></div>
+        </div>
+        <h2 id="1注册属于你自己的github账号"><strong>1.注册属于你自己的Github账号</strong></h2>
+<h3 id="httpsgithubcom"><a href="https://github.com/">https://github.com/</a></h3>
+
+<h2 id="2创建仓库"><strong>2.创建仓库</strong></h2>
+<p>登录后点击右上方头像左侧的加号，在弹出框中选择“New repository”；</p>
+
+<p>创建仓库页面如下：</p>
+
+<p><img src="https://app.yinxiang.com/shard/s61/res/52e01130-3d32-4e77-8221-a4e5a22db9b9/6666666.jpeg" alt="图片" title="'图片title'" />
+<img src="https://app.yinxiang.com/shard/s61/res/c525d49c-687c-45bf-8fe4-19f6ebd40e41/1250458-20171017153553099-864426472.png" alt="图片" title="'图片title'" /></p>
+
+<h2 id="3开启github-pages"><strong>3.开启Github Pages</strong></h2>
+
+<p>点击仓库上方的Settings进入仓库设置。</p>
+
+<p><img src="https://app.yinxiang.com/shard/s61/res/7dea2b86-ab46-4720-ae26-8fb33c614d29/33333333.png" alt="图片" title="'图片title'" />
+<img src="https://app.yinxiang.com/shard/s61/res/dfdb3d9a-38e5-427d-9237-4eea1184c56b/2222222.png" alt="图片" title="'图片title'" /></p>
+
+<h2 id="4下载github桌面版并安装"><strong>4.下载GitHub桌面版并安装</strong></h2>
+<h3 id="httpswindowsgithubcom"><a href="https://windows.github.com/">https://windows.github.com/</a></h3>
+
+<p>首先你需要登录桌面版，然后依次点击点击File - Clone Repository。</p>
+
+<p>在Filter框中填写刚刚你设置的地址（你的用户名.github.io）</p>
+
+<p><img src="https://app.yinxiang.com/shard/s61/res/b8760a10-0311-4ffb-96dc-e6740e073e27.jpg" alt="图片" title="'图片title'" /></p>
+
+<p>Clone之后就会在文稿中生成一个GitHub文件夹，文件夹的名字就是你的用户名.github.io。</p>
+
+<h2 id="5选择主题并配置"><strong>5.选择主题并配置</strong></h2>
+
+<p>在下面网站中选择一个你喜欢的主题，下载下来。</p>
+
+<h3 id="httpjekyllthemesorg"><a href="http://jekyllthemes.org/">http://jekyllthemes.org/</a></h3>
+
+<p>打开刚刚生成的GitHub文件夹，把里面除.git（这个文件夹是个隐藏文件夹）的文件都删掉，然后把你下载好的主题Copy到GitHub文件夹中。</p>
+
+<h2 id="6写博文"><strong>6.写博文</strong></h2>
+<p>如果你下载的主题中含有_posts文件夹，那么把你写的文章（注意要用Markdown写）放在该文件夹内；如果没有该文件夹，那就在GitHub文件夹根目录下创建一个。
+然后按下面步骤操作。</p>
+
+<p><img src="https://app.yinxiang.com/shard/s61/res/6334e96d-62c9-4bc8-a2e3-a34ec297a383.jpg" alt="图片" title="'图片title'" /></p>
+
+<h2 id="7搭建运行本地环境"><strong>7.搭建运行本地环境</strong></h2>
+<ul>
+  <li>
+    <p>安装Ruby 
+https://rubyinstaller.org/downloads/</p>
+  </li>
+  <li>
+    <p>安装 Bundler</p>
+
+    <blockquote>
+      <p>gem install bundler</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>安装 Jekyll</p>
+
+    <p>在 GitHub Pages 目录新建文件<code class="highlighter-rouge">Gemfile</code>，内容如下：</p>
+
+    <blockquote>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  source 'https://rubygems.org'
+     gem 'github-pages', group: :jekyll_plugins
+</code></pre></div>      </div>
+    </blockquote>
+
+    <p>执行</p>
+
+    <blockquote>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundler install
+</code></pre></div>      </div>
+    </blockquote>
+  </li>
+  <li>
+    <p>运行 Jekyll</p>
+
+    <blockquote>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre></div>      </div>
+    </blockquote>
+  </li>
+</ul>
+
+<p>Server address: http://127.0.0.1:4000/</p>
+
+
+
+        <div  style="text-align:center">
+          
+          <el-button @click="shareDialog = true"  type="primary" icon="el-icon-share" circle></el-button>
+    
+        </div>
+        <div class="page-footer">
+          <div class="page-tag">
+            <span>分类:</span>
+            
+            <a href="/tags#技术" class="tag">| 技术</a>
+            
+          </div><!-- End Tags -->
+          <div class="page-share">
+            <!-- <span>Share:</span> -->
+            <!-- <a href="javascript:void()" @click="dialogVisible = true" title="Share" rel="nofollow" target="_blank"><i class="fa fa-share" aria-hidden="true"></i></a> -->
+            <!-- <a href="https://twitter.com/intent/tweet?text=使用Github Page 搭建简易博客&url=http://localhost:4000/GithubPage/" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/sharer.php?u=http://localhost:4000/GithubPage/" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://plus.google.com/share?url=http://localhost:4000/GithubPage/" title="Share on Google+" rel="nofollow" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a> -->
+          </div><!-- End Share -->
+        </div>
+
+        <section class="author-box">
+  <img src="/assets/img/movingj.png" alt="Moving J" class="author-img">
+  <div class="author-desc">
+    <h2>Moving J</h2>
+    <p>我叫江世杰，来自中国广州，全栈工程师，热爱研究新技术，目前主要倾向前端技术，帮助企业建站，微信小程序开发。</p>
+    <ul>
+      
+        <li class="email"><a href="mailto:moving_j@aliyun.com"><i class="fa fa-envelope-o"></i></a></li>
+      
+      <!-- 
+        <li class="phone"><a href="tel:044 825 5523"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+       -->
+      <!-- 
+        <li class="website"><a href="https://artemsheludko.github.io" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i></a></li>
+       -->
+
+    </ul>
+  </div>
+</section>
+
+        <div class="recent-box">
+  <h2 class="recent-title">最近发表</h2>
+  <div class="recent-list">
+    
+      
+        <a href="/Vue_transmit/" class="recent-item" style="background: url(/assets/img/vue.jpg) center no-repeat; background-size: cover;">
+          <span>Vue 如何传值</span>
+          <!-- <span>2019/07/22</span> -->
+        </a>
+ 
+      
+    
+      
+        <a href="/Vue_multipage/" class="recent-item" style="background: url(/assets/img/vue.jpg) center no-repeat; background-size: cover;">
+          <span>Vue 项目配置多页面入口</span>
+          <!-- <span>2019/07/22</span> -->
+        </a>
+ 
+      
+    
+      
+        <a href="/life01/" class="recent-item" style="background: url(/assets/img/post-1.jpg) center no-repeat; background-size: cover;">
+          <span>生活中的思考</span>
+          <!-- <span>2019/07/13</span> -->
+        </a>
+ 
+      
+    
+      
+        <a href="/SynologyAssistant02/" class="recent-item" style="background: url(/assets/img/synology.jpg) center no-repeat; background-size: cover;">
+          <span>手把手教你黑群晖（二）</span>
+          <!-- <span>2019/07/12</span> -->
+        </a>
+ 
+      
+    
+  </div>
+</div> <!-- End Recent-Box -->
+
+      
+      </div>
+      <el-button @click="gotop" v-show="showTop" class="gotop" type="primary" icon="el-icon-caret-top" circle></el-button>
+
+      <el-dialog
+          title=""
+          :visible.sync="shareDialog"
+          width="200px"
+          top="30vh"
+          >
+          <img src="http://b.bshare.cn/barCode?site=weixin&url=http://pershares.com/GithubPage/" alt="Moving J" width="200" height="200">
+        
+          </el-dialog>
+    </div> <!-- End Wrapper -->
+  </article>
+  <div class="search-box">
+  <div class="wrapper">
+    <div class="search-grid">
+      <form class="search-form">
+        <div id="search-container">
+          <input type="text" id="search-input" class="search" placeholder=" ">
+        </div>
+      </form>
+      <ul id="results-container" class="results-search"></ul>
+      <div class="icon-close-container">
+        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<footer class="main-footer">
+  <div class="copyright">
+    <p>2019 &copy; Moving J</p>
+    <!-- <span id="busuanzi_value_site_pv"></span>次 -->
+  </div>
+
+</footer> <!-- End Footer -->
+
+
+ 
+</div>
+
+  
+
+</body>
+</html>

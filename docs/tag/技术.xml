@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Your Title - 技术</title>
+ <link href="/tag/%E6%8A%80%E6%9C%AF.xml" rel="self"/>
+ <link href="/tag/技术.html"/>
+ <updated>2019-07-23T11:05:03+08:00</updated>
+ <id>/tag/技术.html</id>
+ <author>
+   <name>Author Here</name>
+ </author>
+ 
+ <entry>
+   <title>Vue 如何传值</title>
+   <link href="//Vue_transmit/"/>
+   <updated>2019-07-22T00:00:00+08:00</updated>
+   <id>/Vue_transmit</id>
+   <content type="html">&lt;h3 id=&quot;子组件获取父组件的变量&quot;&gt;&lt;strong&gt;子组件获取父组件的变量&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;父：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+      &amp;lt;tbar :aa=&quot;aa&quot;&amp;gt;&amp;lt;/tbar&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+export default {
+    data () {
+         return {
+              aa:'-1',
+         },
+    }
+}
+&amp;lt;/script&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;子：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div&amp;gt;
+          //此处是显示从父获取到的变量 aa
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template
+
+&amp;lt;script&amp;gt;
+export default{
+   props:['aa'],
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;父组件获取子组件的变量&quot;&gt;&lt;strong&gt;父组件获取子组件的变量&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;在引用的子组件添加属性：ref = “tbar”，指向子组件对象，&lt;/li&gt;
+  &lt;li&gt;然后通过 this.$refs.tbar.变量名，读取子组件的变量&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;父：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+   &amp;lt;div&amp;gt;
+       &amp;lt;tbar ref=&quot;tbar&quot;&amp;gt;&amp;lt;/tbar&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+
+&amp;lt;script&amp;gt;
+export default {
+    methods: {
+         getChild(){
+              return this.$refs.tbar.bb;
+        },
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;子：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;template&amp;gt;
+   &amp;lt;div&amp;gt; 
+    &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&amp;lt;script&amp;gt;
+   export default{
+         data () {
+            return {
+                bb:'我是子组件'
+             }
+         }
+     }
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Vue 项目配置多页面入口</title>
+   <link href="//Vue_multipage/"/>
+   <updated>2019-07-22T00:00:00+08:00</updated>
+   <id>/Vue_multipage</id>
+   <content type="html">&lt;p&gt;Vue 项目配置多入口&lt;/p&gt;
+
+&lt;p&gt;在Src目录下新建pages文件夹，入口页面都放在里面&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/44a8c044-3fca-451b-a34f-7d60d80ae634/1563776718541.png&quot; alt=&quot;1563776718541&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;添加入口路径&lt;/p&gt;
+
+&lt;p&gt;首先修改 build / utils.js文件&lt;/p&gt;
+
+&lt;p&gt;在底部插入以下代码&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;　　　//多页面输出配置
+　　　// 与上面的多页面入口配置相同，读取pages文件夹下的对应的html后缀文件，然后放入数组中
+exports.htmlPlugin = function() {
+　let entryHtml = glob.sync(PAGE_PATH + '/*/*.html')
+　let arr = []
+　entryHtml.forEach((filePath) =&amp;gt; {
+　let filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'))
+　let conf = {
+　　　　// 模板来源
+　	template: filePath,
+　　　　// 文件名称
+　	filename: filename + '.html',
+　　　　// 页面模板需要加对应的js脚本，如果不加这行则每个页面都会引入所有的js脚本
+　	chunks: ['manifest', 'vendor', filename],
+　	inject: true
+　}
+　　if (process.env.NODE_ENV === 'production') {
+　　　conf = merge(conf, {
+　　　	minify: {
+　　　	removeComments: true,
+　　　	collapseWhitespace: true,
+　　　	removeAttributeQuotes: true
+　　　},
+　　　	chunksSortMode: 'dependency'
+　　　})
+　　}
+　　arr.push(new HtmlWebpackPlugin(conf))
+　　})
+　　return arr
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;然后修改 build / webpack.base.conf.js 文件&lt;/p&gt;
+
+&lt;p&gt;entry 修改为&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; entry:utils.entries,
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/966715fb-5ee4-4673-8a58-50e279859c29/1563777277234.png&quot; alt=&quot;1563777277234&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这样以后只要直接在pages里新建入口文件，就会自动遍历读取，不用再次修改配置文件&lt;/p&gt;
+
+&lt;p&gt;修改 build / webpack.dev.conf.js 文件&lt;/p&gt;
+
+&lt;p&gt;添加对应代码，例如我的pages下有 admin 和 login 两个入口&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/3af72038-8880-43ee-8757-5fb262a27a8f/1563777537126.png&quot; alt=&quot;1563777540526&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;有多少个入口就添加多少项&lt;/p&gt;
+
+&lt;p&gt;然后再修改 build / webpack.prod.conf.js 文件&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/5fa02d5a-c1e6-4f60-addb-e14a3da9ee36/1563777763174.png&quot; alt=&quot;1563777763174&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;至此。。多个入口配置已经完成 。&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>手把手教你黑群晖（二）</title>
+   <link href="//SynologyAssistant02/"/>
+   <updated>2019-07-12T00:00:00+08:00</updated>
+   <id>/SynologyAssistant02</id>
+   <content type="html">&lt;blockquote&gt;
+  &lt;p&gt;接上一篇，（一）说了怎样在虚拟机安装黑群晖，这一篇就说怎样把它洗白。&lt;/p&gt;
+
+  &lt;p&gt;准备工具：&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;UltraISO&lt;/li&gt;
+    &lt;li&gt;XPEnoboot_DS3615xs_5.2-5592.1.iso&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;把XPEnoboot引导的iso解压出来，找到 &lt;strong&gt;isolinux.cfg&lt;/strong&gt; 文件，用记事本打开。
+&lt;img src=&quot;http://p9.pstatp.com/large/11f700066fed2b62e0d7&quot; alt=&quot;手把手教你黑群晖（二）&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;首先修改SN码为对应型号的序列号，查找文本把所有sn后面的值改为：B8LWN06204（这是经过计算之后得到的）。一共有三处&lt;/p&gt;
+
+  &lt;p&gt;然后是更改MAC地址，群晖设备MAC地址都是默认00-11-32开头的，然后在所有pid后面加上 
+mac1=001132C3468F，也是有三处的，修改完之后如图所示。&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;http://p1.pstatp.com/large/11fc00067520f96a0187&quot; alt=&quot;手把手教你黑群晖（二）&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;修改好保存文件。&lt;/p&gt;
+
+  &lt;p&gt;用 UltraISO 打开你的.iso文件，在下方找到你刚修改好的文件的路径，右键那个文件，选择Add&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;http://p9.pstatp.com/large/1198000452a8230a9f24&quot; alt=&quot;手把手教你黑群晖（二）&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;弹出询问框，选择YES&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;http://p1.pstatp.com/large/11fb00067c22b188439e&quot; alt=&quot;手把手教你黑群晖（二）&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;替换好文件之后点击菜单栏保存。&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;http://p1.pstatp.com/large/11fc00067709e2baa4c4&quot; alt=&quot;手把手教你黑群晖（二）&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;打开VMWare Fusion选择你的虚拟机，CD/DVD 选择修改好的iso文件，运行虚拟机，打开Synology Assistant 搜索，这时会显示在网络物理地址 和型号会分别显示修改好的MAC地址和SN，如图。&lt;/p&gt;
+
+  &lt;p&gt;&lt;img src=&quot;http://p9.pstatp.com/large/11f8000070f91dad0d36&quot; alt=&quot;手把手教你黑群晖（二）&quot; /&gt;&lt;/p&gt;
+
+  &lt;p&gt;进入群晖系统，会发现QuickConnect 等远程功能可以使用了，不会像之前那样报错。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>手把手教你黑群晖（一）</title>
+   <link href="//SynologyAssistant01/"/>
+   <updated>2019-07-12T00:00:00+08:00</updated>
+   <id>/SynologyAssistant01</id>
+   <content type="html">&lt;p&gt;本人是在虚拟机环境下安装的，所以准备工具用到VMware Fusion。&lt;/p&gt;
+
+&lt;p&gt;准备工具：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;VMware Fusion&lt;/li&gt;
+  &lt;li&gt;XPEnoboot_DS3615xs_5.2-5592.1.iso&lt;/li&gt;
+  &lt;li&gt;DSM_DS3615xs_5592.pat&lt;/li&gt;
+  &lt;li&gt;Synology Assistant&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;第一步：创建虚拟机&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;选择Linux2.6.x 64位&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p9.pstatp.com/large/11f70004a40f80776c4f&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p1.pstatp.com/large/11fd00027d9215239d45&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;第二步：选择ISO文件,并设置网卡为桥接模式&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p1.pstatp.com/large/11fb0004a7d9466e5ef2&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p9.pstatp.com/large/11980002845d0276e4e7&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;第三步：选择启动磁盘为CD/DVD&lt;strong&gt;（很重要，不然安装完重启会发现启动不鸟）&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p3.pstatp.com/large/11f90004b0155c324bdb&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p9.pstatp.com/large/11fb0004b2363cbccb74&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;第四步：运行虚拟机，选择Install/Upgrade,回车&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p1.pstatp.com/large/11f90004a744e589c8f1&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p9.pstatp.com/large/11f70004ab2eb8b6691a&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;当屏幕显示DiskStation Login，这个时候打开Synology Assistant,点击搜索，会出现你的虚拟机，显示状态为未安装&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p3.pstatp.com/large/11fc0004aa4326a024c5&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;右键选择安装&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p3.pstatp.com/large/11fc0004aa42331afcd9&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;进入设置向导，选择安装文件（DSM_DS3615xs_5592.pat），然后按提示一直下一步，进入安装进度界面，大概等待10几分钟安装完成。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p3.pstatp.com/large/11f70004b0a64d0ffa84&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;打开Synology Assistant，这时状态会变为已就绪，双击就会自动打开网页进入登陆界面，输入你刚刚设置的账号密码尽情享受吧！！！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p1.pstatp.com/large/11fb0004b4a17603340a&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://p3.pstatp.com/large/11f70004b2a9e2e2c7cc&quot; alt=&quot;手把手教你黑群晖（一）&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;下一篇会教你们怎样把把你的群晖洗白！&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>使用Github Page 搭建简易博客</title>
+   <link href="//GithubPage/"/>
+   <updated>2019-07-11T00:00:00+08:00</updated>
+   <id>/GithubPage</id>
+   <content type="html">&lt;h2 id=&quot;1注册属于你自己的github账号&quot;&gt;&lt;strong&gt;1.注册属于你自己的Github账号&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;httpsgithubcom&quot;&gt;&lt;a href=&quot;https://github.com/&quot;&gt;https://github.com/&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h2 id=&quot;2创建仓库&quot;&gt;&lt;strong&gt;2.创建仓库&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;登录后点击右上方头像左侧的加号，在弹出框中选择“New repository”；&lt;/p&gt;
+
+&lt;p&gt;创建仓库页面如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/52e01130-3d32-4e77-8221-a4e5a22db9b9/6666666.jpeg&quot; alt=&quot;图片&quot; title=&quot;'图片title'&quot; /&gt;
+&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/c525d49c-687c-45bf-8fe4-19f6ebd40e41/1250458-20171017153553099-864426472.png&quot; alt=&quot;图片&quot; title=&quot;'图片title'&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3开启github-pages&quot;&gt;&lt;strong&gt;3.开启Github Pages&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;点击仓库上方的Settings进入仓库设置。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/7dea2b86-ab46-4720-ae26-8fb33c614d29/33333333.png&quot; alt=&quot;图片&quot; title=&quot;'图片title'&quot; /&gt;
+&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/dfdb3d9a-38e5-427d-9237-4eea1184c56b/2222222.png&quot; alt=&quot;图片&quot; title=&quot;'图片title'&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4下载github桌面版并安装&quot;&gt;&lt;strong&gt;4.下载GitHub桌面版并安装&lt;/strong&gt;&lt;/h2&gt;
+&lt;h3 id=&quot;httpswindowsgithubcom&quot;&gt;&lt;a href=&quot;https://windows.github.com/&quot;&gt;https://windows.github.com/&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;首先你需要登录桌面版，然后依次点击点击File - Clone Repository。&lt;/p&gt;
+
+&lt;p&gt;在Filter框中填写刚刚你设置的地址（你的用户名.github.io）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/b8760a10-0311-4ffb-96dc-e6740e073e27.jpg&quot; alt=&quot;图片&quot; title=&quot;'图片title'&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Clone之后就会在文稿中生成一个GitHub文件夹，文件夹的名字就是你的用户名.github.io。&lt;/p&gt;
+
+&lt;h2 id=&quot;5选择主题并配置&quot;&gt;&lt;strong&gt;5.选择主题并配置&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;在下面网站中选择一个你喜欢的主题，下载下来。&lt;/p&gt;
+
+&lt;h3 id=&quot;httpjekyllthemesorg&quot;&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;http://jekyllthemes.org/&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;打开刚刚生成的GitHub文件夹，把里面除.git（这个文件夹是个隐藏文件夹）的文件都删掉，然后把你下载好的主题Copy到GitHub文件夹中。&lt;/p&gt;
+
+&lt;h2 id=&quot;6写博文&quot;&gt;&lt;strong&gt;6.写博文&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;如果你下载的主题中含有_posts文件夹，那么把你写的文章（注意要用Markdown写）放在该文件夹内；如果没有该文件夹，那就在GitHub文件夹根目录下创建一个。
+然后按下面步骤操作。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://app.yinxiang.com/shard/s61/res/6334e96d-62c9-4bc8-a2e3-a34ec297a383.jpg&quot; alt=&quot;图片&quot; title=&quot;'图片title'&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;7搭建运行本地环境&quot;&gt;&lt;strong&gt;7.搭建运行本地环境&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装Ruby 
+https://rubyinstaller.org/downloads/&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装 Bundler&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;gem install bundler&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装 Jekyll&lt;/p&gt;
+
+    &lt;p&gt;在 GitHub Pages 目录新建文件&lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;，内容如下：&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  source 'https://rubygems.org'
+     gem 'github-pages', group: :jekyll_plugins
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;执行&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundler install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;运行 Jekyll&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Server address: http://127.0.0.1:4000/&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+</feed>
